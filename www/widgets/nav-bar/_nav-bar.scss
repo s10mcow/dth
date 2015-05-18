@@ -1,0 +1,135 @@
+.nav-bar {
+    position: fixed;
+    top: 0;
+    z-index: $zindex-navbar-fixed;
+    width: 100%;
+    height: 50px;
+    background: $base-gray;
+    .logo {
+        font-family: $font-family-bold;
+        height: 100%;
+        a{
+            display: block;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: $font-size-xxlarge;
+        }
+    }
+    .links {
+        display: inline-block;
+        float: right;
+        margin-top: -50px;
+
+        .link {
+            display: inline-block;
+            color: #ffffff;
+            font-family: inherit;
+            cursor: pointer;
+            text-align: left;
+            &:hover, &.active {
+                background: $gray;
+            }
+            a {
+                display: block;
+                padding: 18px;
+                height: 50px;
+                font-size: $font-size-xxlarge;
+            }
+            &.hamburger {
+                border: none;
+                background: none;
+                display: none;
+                height: 50px;
+            }
+
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px){
+    .nav-bar {
+        .links {
+            ul {
+                @include transition(max-height, .25s, linear);
+                position: absolute;
+                max-height: 0;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                z-index: 1000;
+                display: none;
+                .link {
+                    @include transition(all, .15s, linear);
+                    opacity: 0;
+                    a {
+                        height: 75px;
+                        font-size: $font-size-xlarge;
+                        text-align: center;
+                        line-height: 38px;
+                        font-family: $font-family-bold;
+                        font-weight: bold;
+                    }
+                }
+                &.menu-open {
+                    display: block;
+                    max-height: 100%;
+                    li {
+                        opacity: 1;
+                    }
+                }
+            }
+            .link {
+                display: block;
+                background: rgba(0, 0, 0, 0.9);
+                &.hamburger {
+                    display: block;
+                    border: none;
+                    a {
+                        height: 45px;
+                    }
+                }
+                &.hamburger span, &.hamburger span:before, &.hamburger span:after {
+                    @include transition(all, 150ms, ease-in-out);
+                    cursor: pointer;
+                    border-radius: 1px;
+                    height: 4px;
+                    width: 30px;
+                    background: #ffffff;
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    right: 16px;
+                    top: 21px;
+                }
+
+                &.hamburger.active {
+                    span {
+                        background-color: transparent;
+                        &:before, &:after {
+                            top: 0;
+                        }
+                        &:before {
+                            transform: rotate(45deg);
+                        }
+                        &:after {
+                            transform: rotate(-45deg);
+                        }
+                    }
+
+                }
+
+                &.hamburger span:before {
+                    top: -10px;
+                    right: 0;
+                }
+                &.hamburger span:after {
+                    top: 10px;
+                    right: 0;
+                }
+
+            }
+        }
+    }
+}

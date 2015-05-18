@@ -1,0 +1,6 @@
+.reevio-rating input{display:none;white-space: nowrap;}
+.reevio-rating.disabled .reevio-rating-star{cursor:default;}
+.reevio-rating-star{cursor:pointer;color:#dadada;text-shadow:0 0 1px rgba(0,0,0,.7);}
+.reevio-rating-star.active{color:#fde16d;}
+.reevio-rating.userchoice .reevio-rating-star.active{color:#0884ff;}
+.reevio-rating-star.hoveractive{cursor:pointer;color:#0884ff;}

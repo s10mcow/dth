@@ -1,0 +1,18 @@
+<span
+        ng-mouseleave="reset()"
+        ng-keydown="onKeydown($event)"
+        tabindex="0"
+        role="slider"
+        aria-valuemin="0"
+        aria-valuemax="{{range.length}}"
+        aria-valuenow="{{value}}"
+        class="rating-star">
+
+    <i ng-repeat="r in range track by $index"
+       class="icon"
+       ng-if="$index < value"
+       ng-class="$index < value && (r.stateOn || 'ion-android-star') || (r.stateOff || 'hidden')">
+
+        <span class="sr-only" ng-bind="star($index, value)"></span>
+    </i>
+</span>

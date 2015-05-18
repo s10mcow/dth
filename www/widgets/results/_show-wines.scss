@@ -1,0 +1,97 @@
+.show-wines {
+    margin-top: 50px;
+}
+
+.results {
+    position: relative;
+
+    .country, .year, .taste, .comments, .alcohol, .headache, .headache-icon, .name, .origin {
+        font-size: $font-size-xxlarge;
+        text-transform: capitalize;
+        white-space: normal;
+    }
+
+    .item.country {
+        margin-bottom: -20px;
+    }
+
+    .name {
+        font-size: $font-size-xxlarge;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:after {
+            content: ', ';
+        }
+    }
+
+
+
+    h3, h5, .origin, .year {
+        font-weight: bold;
+    }
+
+    .rating-star {
+        font-size: $font-size-xxxlarge;
+        i {
+            margin-right: 10px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .country {
+        text-align: center;
+        font-size: $font-size-xxlarge;
+    }
+
+
+
+
+    .label {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        border: 1px solid black;
+        background-position: -40px;
+        margin: 0 auto;
+    }
+
+    .no-label {
+        font-size: 135px;
+    }
+
+    footer {
+        margin-top: 40px;
+
+        .headache, .alcohol {
+            position: absolute;
+            bottom: 5px;
+        }
+        .headache {
+            right: 45px;
+        }
+
+        .headache-icon {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: url("../images/headache.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .alcohol {
+            left: 10px;
+            &:after {
+                content: '%';
+            }
+        }
+    }
+
+
+
+}

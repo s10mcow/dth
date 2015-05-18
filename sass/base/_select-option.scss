@@ -1,0 +1,23 @@
+select {
+  font-family: inherit;
+  color: lighten($complimentary6, 10%);
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  height: 40px;
+  background: #fff;
+  border: none;
+  border-radius: 3px;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  @-ms-viewport { width: 320px; }
+  select {
+    width: 100%;
+  }
+
+}

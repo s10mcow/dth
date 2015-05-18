@@ -1,0 +1,85 @@
+<!--<ion-content>-->
+    <!--<section class="show-wines">-->
+        <!--<ion-list>-->
+            <!--<ion-item class="results" ng-repeat="wine in showWinesCtrl.wines">-->
+
+                <!--<h5 class="country">Product of Portugal</h5>-->
+
+                <!--<rating ng-model="wine.rating" readonly="true"></rating>-->
+
+                <!--<h2 class="name" ng-bind="wine.name"></h2>-->
+
+                <!--<div class="label" ng-class="{'no-label icon ion-wineglass': !wine.base64Img}" style="background-image: url({{wine.base64Img}})"></div>-->
+
+                <!--<span class="origin" ng-bind="wine.origin"></span>-->
+
+                <!--<div class="year" ng-bind="wine.year"></div>-->
+
+                <!--<div class="taste" ng-bind="wine.taste"></div>-->
+
+
+                <!--<div class="comments" ng-bind="wine.comments"></div>-->
+
+
+                <!---->
+                <!--<span class="alcohol" ng-bind="wine.alcohol"></span>-->
+
+                <!--<span class="headache" ng-bind="wine.headache"></span> <span class="headache-icon"></span>-->
+
+
+            <!--</ion-item>-->
+        <!--</ion-list>-->
+
+    <!--</section>-->
+
+<!--</ion-content>-->
+
+
+<ion-content xmlns="http://www.w3.org/1999/html">
+    <section class="show-wines">
+        <ion-list>
+            <ion-item class="card results" ng-repeat="wine in showWinesCtrl.wines">
+
+                <div class="item">
+                    <h2 class="item country">
+                        <span>Product of Portugal</span>
+                        <br/>
+                        <rating ng-model="wine.rating" readonly="true"></rating>
+                    </h2>
+                </div>
+
+                <div class="item item-avatar">
+                    <span class="img">
+                        <i class="icon ion-wineglass"></i>
+                    </span>
+                    <h2>
+                        <span class="name" ng-bind="wine.name"></span>
+                        <span class="year" ng-bind="wine.year"></span>
+                    </h2>
+                    <span class="origin" ng-bind="wine.origin"></span>
+                </div>
+
+                <div  class="item item-body">
+                    <div ng-if="wine.base64Img" class="item item-image">
+                        <img class="full-image" ng-src="{{wine.base64Img}}" alt=""/>
+                        <!--<div class="label" ng-class="{'no-label icon ion-wineglass': !wine.base64Img}" style="background-image: url({{wine.base64Img}})"></div>-->
+                    </div>
+
+                    <p class="taste" ng-bind="wine.taste"></p>
+
+                    <p class="comments" ng-bind="wine.comments"></p>
+
+
+
+                    <footer>
+                        <span class="alcohol" ng-bind="wine.alcohol"></span>
+                        <span class="headache" ng-bind="wine.headache"></span> <span class="headache-icon"></span>
+                    </footer>
+                </div>
+
+            </ion-item>
+        </ion-list>
+
+    </section>
+
+</ion-content>

@@ -1,0 +1,1653 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Amatic;
+  src: url("../fonts/AmaticSC-Regular.ttf"); }
+@font-face {
+  font-family: Amatic-Bold;
+  src: url("../fonts/AmaticSC-Bold.ttf"); }
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:focus {
+  outline: 0; }
+
+@viewport {
+  width: device-width; }
+.hidden {
+  visibility: hidden !important;
+  display: none !important; }
+
+.sr-only {
+  display: none; }
+
+.item-avatar > .img {
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  max-width: 50px;
+  max-height: 50px;
+  width: 100%;
+  height: 100%; }
+  .item-avatar > .img .icon {
+    position: relative;
+    left: 5px;
+    font-size: 75px;
+    line-height: 85px; }
+
+.slide-up-down-animation.ng-hide-add {
+  -webkit-transition: height 0.5s linear;
+  transition: height 0.5s linear;
+  display: flex !important;
+  height: 48px; }
+
+.slide-up-down-animation.ng-hide-remove {
+  -webkit-transition: height 0.5s linear;
+  transition: height 0.5s linear;
+  display: flex !important;
+  height: 48px; }
+
+.slide-up-down-animation.ng-hide {
+  height: 0 !important; }
+
+.fade-down-animation.ng-hide-add {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  display: block !important;
+  padding: 10px 20px 20px; }
+
+.fade-down-animation.ng-hide-remove {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  display: block !important;
+  padding: 10px 20px 20px; }
+
+.fade-down-animation.ng-hide {
+  padding: 0 20px !important; }
+
+.aw-minimize {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  opacity: 0;
+  z-index: -1099; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"],
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  background-color: #477dca;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Amatic, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
+fieldset {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  margin: 0 0 0.75em;
+  padding: 1.5em; }
+
+input,
+label,
+select {
+  display: block;
+  font-family: Amatic, Helvetica, Arial, sans-serif;
+  font-size: 1em; }
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.375em; }
+  label.required::after {
+    content: "*"; }
+  label abbr {
+    display: none; }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
+select[multiple=multiple],
+textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: Amatic, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color;
+  width: 100%; }
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
+  select[multiple=multiple]:hover,
+  textarea:hover {
+    border-color: #c4c4c4; }
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #477dca;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+    outline: none; }
+
+textarea {
+  resize: vertical; }
+
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 0.375em; }
+
+input[type="file"] {
+  padding-bottom: 0.75em;
+  width: 100%; }
+
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto; }
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+dl {
+  margin-bottom: 0.75em; }
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.75em; }
+  dl dd {
+    margin: 0; }
+
+table {
+  -webkit-font-feature-settings: "kern", "liga", "tnum";
+  -moz-font-feature-settings: "kern", "liga", "tnum";
+  -ms-font-feature-settings: "kern", "liga", "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%; }
+
+th {
+  border-bottom: 1px solid #b7b7b7;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left; }
+
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0; }
+
+tr,
+td,
+th {
+  vertical-align: middle; }
+
+body {
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
+  -ms-font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  font-family: Amatic, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Amatic, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em; }
+
+p {
+  margin: 0 0 0.75em; }
+
+a {
+  color: #477dca;
+  text-decoration: none;
+  transition: color 0.1s linear; }
+  a:active, a:focus, a:hover {
+    color: #2c5999; }
+  a:active, a:focus {
+    outline: none; }
+
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0; }
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+a {
+  color: white;
+  text-decoration: none; }
+  a:visited, a:active {
+    color: white; }
+
+body {
+  font-family: Amatic, Helvetica, Arial, sans-serif; }
+
+.btn {
+  border: none;
+  background: #BF9A49;
+  font-family: inherit;
+  color: #ffffff;
+  cursor: pointer; }
+
+.btn--shadow {
+  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.75); }
+
+.btn--sm {
+  padding: 6px;
+  font-size: 10px;
+  line-height: 1.5; }
+
+.btn--md {
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.42857; }
+
+.btn--lg {
+  padding: 16px;
+  font-size: 18px;
+  line-height: 1.33; }
+
+.btn--xlg {
+  padding: 25px;
+  font-size: 22px;
+  line-height: 1; }
+
+.btn--round, .btn--round__fixed, .btn--round--comp1, .btn--round--comp3, .btn--round--comp4, .btn--round--comp5, .btn--round--comp6 {
+  background: #4972BF;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px; }
+
+.btn--round__fixed {
+  position: fixed;
+  bottom: 10px;
+  right: 10px; }
+
+.btn--round--comp1 {
+  background: #61CA9D; }
+
+.btn--round--comp3 {
+  background: #153572; }
+
+.btn--round--comp4 {
+  background: #FFD67B; }
+
+.btn--round--comp5 {
+  background: #725920; }
+
+.btn--round--comp6 {
+  background: #BF9A49; }
+
+.btn--block {
+  width: 100%; }
+
+.btn--neutral {
+  background: none; }
+  .btn--neutral:hover {
+    background: none; }
+
+.btn-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
+
+.btn-2 {
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+  -moz-flex-grow: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2; }
+
+.btn-3 {
+  -webkit-box-flex: 3;
+  -webkit-flex-grow: 3;
+  -moz-flex-grow: 3;
+  -ms-flex-positive: 3;
+  flex-grow: 3; }
+
+.btn-4 {
+  -webkit-box-flex: 4;
+  -webkit-flex-grow: 4;
+  -moz-flex-grow: 4;
+  -ms-flex-positive: 4;
+  flex-grow: 4; }
+
+.btn-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 60px; }
+
+h1, .h1 {
+  font-size: 36px;
+  margin: 0; }
+
+h2, .h2 {
+  font-size: 30px;
+  margin: 0; }
+
+h3, .h3 {
+  font-size: 24px;
+  margin: 0; }
+
+h4, .h4 {
+  font-size: 18px;
+  margin: 0; }
+
+h5, .h5 {
+  font-size: 14px;
+  margin: 0; }
+
+h6, .h6 {
+  font-size: 12px;
+  margin: 0; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+ul li {
+  list-style: none; }
+
+html {
+  background: url("../images/hatch.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%; }
+
+input[type=text], input[type=password], input[type=date], input[type=file], input[type=email] {
+  height: 35px;
+  line-height: 35px;
+  padding: 5px 10px; }
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 20px;
+  margin: 0 0 10px 0;
+  border: none;
+  padding: 1px 2px;
+  border-radius: 14px;
+  background: #484d4b;
+  outline: none;
+  /* no focus outline */ }
+
+input[type="range"]::-moz-range-track {
+  border: inherit;
+  background: transparent; }
+
+input[type="range"]::-ms-track {
+  border: inherit;
+  color: transparent;
+  /* don't drawn vertical reference line */
+  background: transparent; }
+
+input[type="range"]::-ms-fill-lower,
+input[type="range"]::-ms-fill-upper {
+  background: transparent; }
+
+input[type="range"]::-ms-tooltip {
+  display: none; }
+
+/* thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 18px;
+  border: none;
+  border-radius: 12px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #BF9A49), color-stop(100%, #725920));
+  /* android <= 2.2 */
+  background-image: -webkit-linear-gradient(top, #BF9A49 0, #725920 100%);
+  /* older mobile safari and android > 2.2 */
+  background-image: linear-gradient(to bottom, #BF9A49 0, #725920 100%);
+  /* W3C */ }
+
+input[type="range"]::-moz-range-thumb {
+  width: 40px;
+  height: 18px;
+  border: none;
+  border-radius: 12px;
+  background-image: linear-gradient(to bottom, #BF9A49 0, #725920 100%);
+  /* W3C */ }
+
+input[type="range"]::-ms-thumb {
+  width: 40px;
+  height: 18px;
+  border-radius: 12px;
+  border: 0;
+  background-image: linear-gradient(to bottom, #BF9A49 0, #725920 100%);
+  /* W3C */ }
+
+select {
+  font-family: inherit;
+  color: #ccaf6f;
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  height: 40px;
+  background: #fff;
+  border: none;
+  border-radius: 3px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  padding-left: 20px; }
+
+@media screen and (max-width: 400px) {
+  @-ms-viewport {
+    width: 320px; }
+  select {
+    width: 100%; } }
+/*------------------------------------*\
+    $CSSWIZARDRY-GRIDS
+\*------------------------------------*/
+/**
+ * CONTENTS
+ * INTRODUCTION.........How the grid system works.
+ * VARIABLES............Your settings.
+ * MIXINS...............Library mixins.
+ * GRID SETUP...........Build the grid structure.
+ * WIDTHS...............Build our responsive widths around our breakpoints.
+ * PUSH.................Push classes.
+ * PULL.................Pull classes.
+ */
+/*------------------------------------*\
+    $INTRODUCTION
+\*------------------------------------*/
+/**
+ * csswizardry grids provides you with widths to suit a number of breakpoints
+ * designed around devices of a size you specify. Out of the box, csswizardry
+ * grids caters to the following types of device:
+ *
+ * palm     --  palm-based devices, like phones and small tablets
+ * lap      --  lap-based devices, like iPads or laptops
+ * portable --  all of the above
+ * desk     --  stationary devices, like desktop computers
+ * regular  --  any/all types of device
+ *
+ * These namespaces are then used in the library to give you the ability to
+ * manipulate your layouts based around them, for example:
+ *
+   <div class="grid__item  one-whole  lap--one-half  desk--one-third">
+ *
+ * This would give you a grid item which is 100% width unless it is on a lap
+ * device, at which point it become 50% wide, or it is on a desktop device, at
+ * which point it becomes 33.333% width.
+ *
+ * csswizardry grids also has push and pull classes which allow you to nudge
+ * grid items left and right by a defined amount. These follow the same naming
+ * convention as above, but are prepended by either `push--` or `pull--`, for
+ * example:
+ *
+   `class="grid__item  one-half  push--one-half"`
+ *
+ * This would give you a grid item which is 50% width and pushed over to the
+ * right by 50%.
+ *
+ * All classes in csswizardry grids follow this patten, so you should fairly
+ * quickly be able to piece together any combinations you can imagine, for
+ * example:
+ *
+   `class="grid__item  one-whole  lap--one-half  desk--one-third  push--desk--one-third"`
+ *
+   `class="grid__item  one-quarter  palm--one-half  push--palm--one-half"`
+ *
+   `class="grid__item  palm--one-third  desk--five-twelfths"`
+ */
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/**
+ * If you are building a non-responsive site but would still like to use
+ * csswizardry-grids, set this to ‘false’:
+ */
+/**
+ * Is this build mobile first? Setting to ‘true’ means that all grids will be
+ * 100% width if you do not apply a more specific class to them.
+ */
+/**
+ * Set the spacing between your grid items.
+ */
+/**
+ * Would you like Sass’ silent classes, or regular CSS classes?
+ */
+/**
+ * Would you like push and pull classes enabled?
+ */
+/**
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ */
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+/**
+ * You do not need to edit anything from this line onward; csswizardry-grids is
+ * good to go. Happy griddin’!
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * These mixins are for the library to use only, you should not need to modify
+ * them at all.
+ *
+ * Enclose a block of code with a media query as named in `$breakpoints`.
+ */
+/**
+ * Drop relative positioning into silent classes which can’t take advantage of
+ * the `[class*="push--"]` and `[class*="pull--"]` selectors.
+ */
+/*------------------------------------*\
+    $GRID SETUP
+\*------------------------------------*/
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+ */
+.grid {
+  list-style: none;
+  /* [1] */
+  margin: 0;
+  /* [2] */
+  padding: 0;
+  /* [2] */
+  margin-left: -24px;
+  /* [3] */ }
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Align columns to the tops of each other.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters.
+ */
+.grid__item {
+  display: inline-block;
+  /* [1] */
+  padding-left: 24px;
+  /* [2] */
+  vertical-align: top;
+  /* [3] */
+  width: 100%;
+  /* [4] */
+  -webkit-box-sizing: border-box;
+  /* [5] */
+  -moz-box-sizing: border-box;
+  /* [5] */
+  box-sizing: border-box;
+  /* [5] */ }
+
+/**
+ * Reversed grids allow you to structure your source in the opposite order to
+ * how your rendered layout will appear. Extends `.grid`.
+ */
+.grid--rev {
+  direction: rtl;
+  text-align: left; }
+  .grid--rev > .grid__item {
+    direction: ltr;
+    text-align: left; }
+
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ * Extends `.grid`.
+ */
+.grid--full {
+  margin-left: 0; }
+  .grid--full > .grid__item {
+    padding-left: 0; }
+
+/**
+ * Align the entire grid to the right. Extends `.grid`.
+ */
+.grid--right {
+  text-align: right; }
+  .grid--right > .grid__item {
+    text-align: left; }
+
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes. Extends `.grid`.
+ */
+.grid--center {
+  text-align: center; }
+  .grid--center > .grid__item {
+    text-align: left; }
+
+/**
+ * Align grid cells vertically (`.grid--middle` or `.grid--bottom`). Extends
+ * `.grid`.
+ */
+.grid--middle > .grid__item {
+  vertical-align: middle; }
+
+.grid--bottom > .grid__item {
+  vertical-align: bottom; }
+
+/**
+ * Create grids with narrower gutters. Extends `.grid`.
+ */
+.grid--narrow {
+  margin-left: -12px; }
+  .grid--narrow > .grid__item {
+    padding-left: 12px; }
+
+/**
+ * Create grids with wider gutters. Extends `.grid`.
+ */
+.grid--wide {
+  margin-left: -48px; }
+  .grid--wide > .grid__item {
+    padding-left: 48px; }
+
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Create our width classes, prefixed by the specified namespace.
+ */
+/**
+ * Our regular, non-responsive width classes.
+ */
+/**
+ * Whole
+ */
+.one-whole {
+  width: 100%; }
+
+/**
+ * Halves
+ */
+.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+  width: 50%; }
+
+/**
+ * Thirds
+ */
+.one-third, .two-sixths, .four-twelfths {
+  width: 33.333%; }
+
+.two-thirds, .four-sixths, .eight-twelfths {
+  width: 66.666%; }
+
+/**
+ * Quarters
+ */
+.one-quarter, .two-eighths, .three-twelfths {
+  width: 25%; }
+
+.three-quarters, .six-eighths, .nine-twelfths {
+  width: 75%; }
+
+/**
+ * Fifths
+ */
+.one-fifth, .two-tenths {
+  width: 20%; }
+
+.two-fifths, .four-tenths {
+  width: 40%; }
+
+.three-fifths, .six-tenths {
+  width: 60%; }
+
+.four-fifths, .eight-tenths {
+  width: 80%; }
+
+/**
+ * Sixths
+ */
+.one-sixth, .two-twelfths {
+  width: 16.666%; }
+
+.five-sixths, .ten-twelfths {
+  width: 83.333%; }
+
+/**
+ * Eighths
+ */
+.one-eighth {
+  width: 12.5%; }
+
+.three-eighths {
+  width: 37.5%; }
+
+.five-eighths {
+  width: 62.5%; }
+
+.seven-eighths {
+  width: 87.5%; }
+
+/**
+ * Tenths
+ */
+.one-tenth {
+  width: 10%; }
+
+.three-tenths {
+  width: 30%; }
+
+.seven-tenths {
+  width: 70%; }
+
+.nine-tenths {
+  width: 90%; }
+
+/**
+ * Twelfths
+ */
+.one-twelfth {
+  width: 8.333%; }
+
+.five-twelfths {
+  width: 41.666%; }
+
+.seven-twelfths {
+  width: 58.333%; }
+
+.eleven-twelfths {
+  width: 91.666%; }
+
+/**
+ * Our responsive classes, if we have enabled them.
+ */
+@media only screen and (max-width: 480px) {
+  /**
+   * Whole
+   */
+  .palm--one-whole {
+    width: 100%; }
+
+  /**
+   * Halves
+   */
+  .palm--one-half, .palm--two-quarters, .palm--three-sixths, .palm--four-eighths, .palm--five-tenths, .palm--six-twelfths {
+    width: 50%; }
+
+  /**
+   * Thirds
+   */
+  .palm--one-third, .palm--two-sixths, .palm--four-twelfths {
+    width: 33.333%; }
+
+  .palm--two-thirds, .palm--four-sixths, .palm--eight-twelfths {
+    width: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .palm--one-quarter, .palm--two-eighths, .palm--three-twelfths {
+    width: 25%; }
+
+  .palm--three-quarters, .palm--six-eighths, .palm--nine-twelfths {
+    width: 75%; }
+
+  /**
+   * Fifths
+   */
+  .palm--one-fifth, .palm--two-tenths {
+    width: 20%; }
+
+  .palm--two-fifths, .palm--four-tenths {
+    width: 40%; }
+
+  .palm--three-fifths, .palm--six-tenths {
+    width: 60%; }
+
+  .palm--four-fifths, .palm--eight-tenths {
+    width: 80%; }
+
+  /**
+   * Sixths
+   */
+  .palm--one-sixth, .palm--two-twelfths {
+    width: 16.666%; }
+
+  .palm--five-sixths, .palm--ten-twelfths {
+    width: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .palm--one-eighth {
+    width: 12.5%; }
+
+  .palm--three-eighths {
+    width: 37.5%; }
+
+  .palm--five-eighths {
+    width: 62.5%; }
+
+  .palm--seven-eighths {
+    width: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .palm--one-tenth {
+    width: 10%; }
+
+  .palm--three-tenths {
+    width: 30%; }
+
+  .palm--seven-tenths {
+    width: 70%; }
+
+  .palm--nine-tenths {
+    width: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .palm--one-twelfth {
+    width: 8.333%; }
+
+  .palm--five-twelfths {
+    width: 41.666%; }
+
+  .palm--seven-twelfths {
+    width: 58.333%; }
+
+  .palm--eleven-twelfths {
+    width: 91.666%; } }
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  /**
+   * Whole
+   */
+  .lap--one-whole {
+    width: 100%; }
+
+  /**
+   * Halves
+   */
+  .lap--one-half, .lap--two-quarters, .lap--three-sixths, .lap--four-eighths, .lap--five-tenths, .lap--six-twelfths {
+    width: 50%; }
+
+  /**
+   * Thirds
+   */
+  .lap--one-third, .lap--two-sixths, .lap--four-twelfths {
+    width: 33.333%; }
+
+  .lap--two-thirds, .lap--four-sixths, .lap--eight-twelfths {
+    width: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .lap--one-quarter, .lap--two-eighths, .lap--three-twelfths {
+    width: 25%; }
+
+  .lap--three-quarters, .lap--six-eighths, .lap--nine-twelfths {
+    width: 75%; }
+
+  /**
+   * Fifths
+   */
+  .lap--one-fifth, .lap--two-tenths {
+    width: 20%; }
+
+  .lap--two-fifths, .lap--four-tenths {
+    width: 40%; }
+
+  .lap--three-fifths, .lap--six-tenths {
+    width: 60%; }
+
+  .lap--four-fifths, .lap--eight-tenths {
+    width: 80%; }
+
+  /**
+   * Sixths
+   */
+  .lap--one-sixth, .lap--two-twelfths {
+    width: 16.666%; }
+
+  .lap--five-sixths, .lap--ten-twelfths {
+    width: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .lap--one-eighth {
+    width: 12.5%; }
+
+  .lap--three-eighths {
+    width: 37.5%; }
+
+  .lap--five-eighths {
+    width: 62.5%; }
+
+  .lap--seven-eighths {
+    width: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .lap--one-tenth {
+    width: 10%; }
+
+  .lap--three-tenths {
+    width: 30%; }
+
+  .lap--seven-tenths {
+    width: 70%; }
+
+  .lap--nine-tenths {
+    width: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .lap--one-twelfth {
+    width: 8.333%; }
+
+  .lap--five-twelfths {
+    width: 41.666%; }
+
+  .lap--seven-twelfths {
+    width: 58.333%; }
+
+  .lap--eleven-twelfths {
+    width: 91.666%; } }
+@media only screen and (max-width: 1023px) {
+  /**
+   * Whole
+   */
+  .portable--one-whole {
+    width: 100%; }
+
+  /**
+   * Halves
+   */
+  .portable--one-half, .portable--two-quarters, .portable--three-sixths, .portable--four-eighths, .portable--five-tenths, .portable--six-twelfths {
+    width: 50%; }
+
+  /**
+   * Thirds
+   */
+  .portable--one-third, .portable--two-sixths, .portable--four-twelfths {
+    width: 33.333%; }
+
+  .portable--two-thirds, .portable--four-sixths, .portable--eight-twelfths {
+    width: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .portable--one-quarter, .portable--two-eighths, .portable--three-twelfths {
+    width: 25%; }
+
+  .portable--three-quarters, .portable--six-eighths, .portable--nine-twelfths {
+    width: 75%; }
+
+  /**
+   * Fifths
+   */
+  .portable--one-fifth, .portable--two-tenths {
+    width: 20%; }
+
+  .portable--two-fifths, .portable--four-tenths {
+    width: 40%; }
+
+  .portable--three-fifths, .portable--six-tenths {
+    width: 60%; }
+
+  .portable--four-fifths, .portable--eight-tenths {
+    width: 80%; }
+
+  /**
+   * Sixths
+   */
+  .portable--one-sixth, .portable--two-twelfths {
+    width: 16.666%; }
+
+  .portable--five-sixths, .portable--ten-twelfths {
+    width: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .portable--one-eighth {
+    width: 12.5%; }
+
+  .portable--three-eighths {
+    width: 37.5%; }
+
+  .portable--five-eighths {
+    width: 62.5%; }
+
+  .portable--seven-eighths {
+    width: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .portable--one-tenth {
+    width: 10%; }
+
+  .portable--three-tenths {
+    width: 30%; }
+
+  .portable--seven-tenths {
+    width: 70%; }
+
+  .portable--nine-tenths {
+    width: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .portable--one-twelfth {
+    width: 8.333%; }
+
+  .portable--five-twelfths {
+    width: 41.666%; }
+
+  .portable--seven-twelfths {
+    width: 58.333%; }
+
+  .portable--eleven-twelfths {
+    width: 91.666%; } }
+@media only screen and (min-width: 1024px) {
+  /**
+   * Whole
+   */
+  .desk--one-whole {
+    width: 100%; }
+
+  /**
+   * Halves
+   */
+  .desk--one-half, .desk--two-quarters, .desk--three-sixths, .desk--four-eighths, .desk--five-tenths, .desk--six-twelfths {
+    width: 50%; }
+
+  /**
+   * Thirds
+   */
+  .desk--one-third, .desk--two-sixths, .desk--four-twelfths {
+    width: 33.333%; }
+
+  .desk--two-thirds, .desk--four-sixths, .desk--eight-twelfths {
+    width: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .desk--one-quarter, .desk--two-eighths, .desk--three-twelfths {
+    width: 25%; }
+
+  .desk--three-quarters, .desk--six-eighths, .desk--nine-twelfths {
+    width: 75%; }
+
+  /**
+   * Fifths
+   */
+  .desk--one-fifth, .desk--two-tenths {
+    width: 20%; }
+
+  .desk--two-fifths, .desk--four-tenths {
+    width: 40%; }
+
+  .desk--three-fifths, .desk--six-tenths {
+    width: 60%; }
+
+  .desk--four-fifths, .desk--eight-tenths {
+    width: 80%; }
+
+  /**
+   * Sixths
+   */
+  .desk--one-sixth, .desk--two-twelfths {
+    width: 16.666%; }
+
+  .desk--five-sixths, .desk--ten-twelfths {
+    width: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .desk--one-eighth {
+    width: 12.5%; }
+
+  .desk--three-eighths {
+    width: 37.5%; }
+
+  .desk--five-eighths {
+    width: 62.5%; }
+
+  .desk--seven-eighths {
+    width: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .desk--one-tenth {
+    width: 10%; }
+
+  .desk--three-tenths {
+    width: 30%; }
+
+  .desk--seven-tenths {
+    width: 70%; }
+
+  .desk--nine-tenths {
+    width: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .desk--one-twelfth {
+    width: 8.333%; }
+
+  .desk--five-twelfths {
+    width: 41.666%; }
+
+  .desk--seven-twelfths {
+    width: 58.333%; }
+
+  .desk--eleven-twelfths {
+    width: 91.666%; } }
+/*------------------------------------*\
+    $PUSH
+\*------------------------------------*/
+/**
+ * Push classes, to move grid items over to the right by certain amounts.
+ */
+/*------------------------------------*\
+    $PULL
+\*------------------------------------*/
+/**
+ * Pull classes, to move grid items back to the left by certain amounts.
+ */
+.nav-square {
+  margin: 60px auto 0;
+  width: 300px;
+  height: 100%; }
+  .nav-square .link {
+    color: #fff;
+    width: 150px;
+    display: inline-block;
+    float: left;
+    /*TODO: make height dynamic */
+    height: 200px;
+    background: rgba(0, 0, 0, 0.7); }
+    .nav-square .link:nth-child(even) {
+      border-left: 1px solid #aaa; }
+    .nav-square .link:nth-child(1), .nav-square .link:nth-child(2) {
+      border-bottom: 1px solid #aaa; }
+    .nav-square .link:hover {
+      background: rgba(0, 0, 0, 0.9); }
+    .nav-square .link a {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      text-align: center; }
+      .nav-square .link a span {
+        font-family: "Times New Roman", Times, serif;
+        position: relative;
+        top: 90px;
+        width: 100%;
+        text-align: center; }
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  z-index: 1030;
+  width: 100%;
+  height: 50px;
+  background: #484d4b; }
+  .nav-bar .logo {
+    font-family: Amatic-Bold, Helvetica, Arial;
+    height: 100%; }
+    .nav-bar .logo a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      font-size: 31px; }
+  .nav-bar .links {
+    display: inline-block;
+    float: right;
+    margin-top: -50px; }
+    .nav-bar .links .link {
+      display: inline-block;
+      color: #ffffff;
+      font-family: inherit;
+      cursor: pointer;
+      text-align: left; }
+      .nav-bar .links .link:hover, .nav-bar .links .link.active {
+        background: #9da3a1; }
+      .nav-bar .links .link a {
+        display: block;
+        padding: 18px;
+        height: 50px;
+        font-size: 31px; }
+      .nav-bar .links .link.hamburger {
+        border: none;
+        background: none;
+        display: none;
+        height: 50px; }
+
+@media screen and (max-width: 767px) {
+  .nav-bar .links ul {
+    -webkit-transition: max-height, 0.25s, linear;
+    transition: max-height, 0.25s, linear;
+    position: absolute;
+    max-height: 0;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: none; }
+    .nav-bar .links ul .link {
+      -webkit-transition: all, 0.15s, linear;
+      transition: all, 0.15s, linear;
+      opacity: 0; }
+      .nav-bar .links ul .link a {
+        height: 75px;
+        font-size: 22px;
+        text-align: center;
+        line-height: 38px;
+        font-family: Amatic-Bold, Helvetica, Arial;
+        font-weight: bold; }
+    .nav-bar .links ul.menu-open {
+      display: block;
+      max-height: 100%; }
+      .nav-bar .links ul.menu-open li {
+        opacity: 1; }
+  .nav-bar .links .link {
+    display: block;
+    background: rgba(0, 0, 0, 0.9); }
+    .nav-bar .links .link.hamburger {
+      display: block;
+      border: none; }
+      .nav-bar .links .link.hamburger a {
+        height: 45px; }
+    .nav-bar .links .link.hamburger span, .nav-bar .links .link.hamburger span:before, .nav-bar .links .link.hamburger span:after {
+      -webkit-transition: all, 150ms, ease-in-out;
+      transition: all, 150ms, ease-in-out;
+      cursor: pointer;
+      border-radius: 1px;
+      height: 4px;
+      width: 30px;
+      background: #ffffff;
+      position: absolute;
+      display: block;
+      content: '';
+      right: 16px;
+      top: 21px; }
+    .nav-bar .links .link.hamburger.active span {
+      background-color: transparent; }
+      .nav-bar .links .link.hamburger.active span:before, .nav-bar .links .link.hamburger.active span:after {
+        top: 0; }
+      .nav-bar .links .link.hamburger.active span:before {
+        transform: rotate(45deg); }
+      .nav-bar .links .link.hamburger.active span:after {
+        transform: rotate(-45deg); }
+    .nav-bar .links .link.hamburger span:before {
+      top: -10px;
+      right: 0; }
+    .nav-bar .links .link.hamburger span:after {
+      top: 10px;
+      right: 0; } }
+.search {
+  position: absolute;
+  top: 55%;
+  background: rgba(50, 50, 50, 0.7);
+  padding: 30px;
+  width: 100%;
+  margin: -150px auto 0;
+  text-align: center; }
+  .search .header h3 {
+    color: #fff;
+    text-align: center;
+    font-family: Amatic, Helvetica, Arial, sans-serif;
+    margin-bottom: 20px; }
+
+.crud {
+  position: relative;
+  margin-top: 50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background: rgba(50, 50, 50, 0.7) fixed;
+  color: white;
+  text-align: center; }
+  .crud header {
+    margin-bottom: 20px; }
+    .crud header h3 {
+      color: inherit;
+      font-size: 35px;
+      font-weight: bold; }
+  .crud select {
+    margin-bottom: 10px; }
+  .crud form {
+    padding-bottom: 20px; }
+  .crud label {
+    text-align: left; }
+  .crud input {
+    color: #333;
+    margin-bottom: 20px; }
+  .crud .add, .crud .edit {
+    background-color: #BF9A49;
+    font-size: 22px; }
+  .crud .camera {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: #153572; }
+
+.show-wines {
+  margin-top: 50px; }
+
+.results {
+  position: relative; }
+  .results .country, .results .year, .results .taste, .results .comments, .results .alcohol, .results .headache, .results .headache-icon, .results .name, .results .origin {
+    font-size: 31px;
+    text-transform: capitalize;
+    white-space: normal; }
+  .results .item.country {
+    margin-bottom: -20px; }
+  .results .name {
+    font-size: 31px;
+    text-transform: uppercase;
+    font-weight: bold; }
+    .results .name:after {
+      content: ', '; }
+  .results h3, .results h5, .results .origin, .results .year {
+    font-weight: bold; }
+  .results .rating-star {
+    font-size: 35px; }
+    .results .rating-star i {
+      margin-right: 10px; }
+      .results .rating-star i:last-child {
+        margin-right: 0; }
+  .results .country {
+    text-align: center;
+    font-size: 31px; }
+  .results .label {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-position: -40px;
+    margin: 0 auto; }
+  .results .no-label {
+    font-size: 135px; }
+  .results footer {
+    margin-top: 40px; }
+    .results footer .headache, .results footer .alcohol {
+      position: absolute;
+      bottom: 5px; }
+    .results footer .headache {
+      right: 45px; }
+    .results footer .headache-icon {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: url("../images/headache.png");
+      background-size: contain;
+      background-repeat: no-repeat; }
+    .results footer .alcohol {
+      left: 10px; }
+      .results footer .alcohol:after {
+        content: '%'; }

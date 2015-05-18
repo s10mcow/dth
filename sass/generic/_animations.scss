@@ -1,0 +1,39 @@
+
+
+.slide-up-down-animation.ng-hide-add {
+  @include transition(height .5s linear);
+  display: flex !important;
+  height: 48px;
+}
+
+.slide-up-down-animation.ng-hide-remove {
+  @include transition(height .5s linear);
+  display: flex !important;
+  height: 48px;
+}
+
+.slide-up-down-animation.ng-hide{
+  height: 0 !important;
+}
+
+.fade-down-animation.ng-hide-add {
+  @include transition(all .3s linear);
+  display: block !important;
+  padding: 10px 20px 20px;
+}
+
+.fade-down-animation.ng-hide-remove {
+  @include transition(all .3s linear);
+  display: block !important;
+  padding: 10px 20px 20px;
+}
+
+.fade-down-animation.ng-hide{
+  padding: 0 20px !important;
+}
+
+.aw-minimize {
+  @include transition(all .3s linear);
+  opacity: 0;
+  z-index: $zindex-bottom;
+}

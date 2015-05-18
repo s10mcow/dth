@@ -1,0 +1,137 @@
+@font-face {
+    font-family: Amatic;
+    src: url('../fonts/AmaticSC-Regular.ttf');
+}
+
+@font-face {
+    font-family: Amatic-Bold;
+    src: url('../fonts/AmaticSC-Bold.ttf');
+}
+
+//
+// Variables
+// -------------------------------------------------
+
+//== Colors
+//
+//## Gray and brand colors for use across AW.
+$base-gray:              #484d4b !default;
+
+$gray-darker:            lighten($base-gray, 13.5%) !default; // #222
+$gray-dark:              lighten($base-gray, 20%) !default;   // #333
+$gray:                   lighten($base-gray, 33.5%) !default; // #555
+$gray-light:             lighten($base-gray, 60%) !default;   // #999
+$gray-lighter:           lighten($base-gray, 93.5%) !default; // #eee
+
+$brand-primary:         #137779 !default;
+$brand-success:         #14b828 !default;
+$brand-info:            #1b8cde !default;
+$brand-warning:         #f0de14 !default;
+$brand-danger:          #d9241f !default;
+
+//Complimentary Colors
+$complimentary1:        #61CA9D !default;
+$complimentary2:        #4972BF !default;
+$complimentary3:        #153572 !default;
+$complimentary4:        #FFD67B !default;
+$complimentary5:        #725920 !default;
+$complimentary6:        #BF9A49 !default;
+
+$complimentary6-lighter:        lighten($complimentary6, 13.5%) !default;
+
+
+//660033 - red
+//370CE8 - blue
+//00D9FF - light blue
+//0CE815 - green
+//FFE700 - yellow
+
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  Amatic, Helvetica, Arial, sans-serif !default;
+$font-family-serif:       "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+$font-family-bold:        Amatic-Bold, Helvetica, Arial !default;
+
+$font-size-base:          14px !default;
+$font-size-xxxlarge:      ceil(($font-size-base * 2.50)) !default; // ~35px
+$font-size-xxlarge:       ceil(($font-size-base * 2.15)) !default; // ~30px
+$font-size-xlarge:        ceil(($font-size-base * 1.57)) !default; // ~22px
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-xsmall:        ceil(($font-size-base * 0.7)) !default;  // ~10px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-xlarge-vertical:    15px !default;
+$padding-xlarge-horizontal:  25px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+$line-height-xlarge:         1 !default;
+$line-height-large:         1.33 !default;
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        4px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
+//== Toggle Switch Sizes
+//
+//## Defines the sizes of the toggle switch
+
+$toggle-switch-lg:          120px !default;
+$toggle-switch-md:          80px !default;
+$toggle-switch-sm:          40px !default;
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-modal:             1040;
+$zindex-bottom:            -1099;
+$zindex-top:               1099;

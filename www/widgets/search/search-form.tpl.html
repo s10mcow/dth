@@ -1,0 +1,22 @@
+
+<section class="search">
+    <article>
+        <header class="header">
+            <h3 class="h1">Pick Yer Poison.</h3>
+        </header>
+
+        <form class="form" ng-submit="getSearchTerm()">
+            <label for="search"></label>
+            <input id="search" class="awesomplete" type="text" ng-model="searchCtrl.searchTerm" data-autofirst="true" data-list={{searchCtrl.wineNames}} />
+
+            <button class="btn btn--round--comp6" type="submit"> <i class="icon ion-search"></i></button>
+        </form>
+    </article>
+
+</section>
+
+<section>
+    <button class="btn btn--round__fixed btn--shadow" ng-click="$state.go('home.crud')">
+        <i class="icon ion-plus"></i>
+    </button>
+</section>

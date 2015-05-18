@@ -1,0 +1,54 @@
+.crud {
+
+    position: relative;
+    margin-top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background: rgba(50, 50, 50, 0.7) fixed;
+    color: white;
+    text-align: center;
+
+
+    header {
+        margin-bottom: 20px;
+        h3 {
+            color: inherit;
+            font-size: $font-size-xxxlarge;
+            font-weight: bold;
+        }
+    }
+
+    select {
+        margin-bottom: 10px;
+    }
+
+    form {
+        padding-bottom: 20px;
+    }
+
+    label {
+        text-align: left;
+    }
+    input {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .add, .edit {
+        background-color: $complimentary6;
+        font-size: $font-size-xlarge;
+    }
+
+
+    .camera {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background: $complimentary3;
+    }
+
+    .switch {
+    }
+}

@@ -1,0 +1,4 @@
+<span class="reevio-rating {{(disabled==true)?'disabled':''}} {{(userChoice==true)?'userchoice':''}}" ng-mouseout="starHover($index)" >
+  <span ng-repeat="item in stars track by $index" ng-mouseover="starHover($index)" ng-click="starClick($index)" class="{{(value-1>=$index)?'active':''}} {{(hoverValue-1>=($index))?'hoveractive':''}} reevio-rating-star glyphicon glyphicon-star"></span>
+  <input ng-model="value" type="number"/>
+</span>

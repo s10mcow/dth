@@ -1,0 +1,28 @@
+{
+    "name": "angular-bootstrap-rating",
+    "version": "0.1",
+    "homepage": "https://github.com/MikeSpock/angular-bootstrap-rating",
+    "authors": [
+        "mihaly_kr <mihaly.kristof@gmail.com>"
+    ],
+    "description": "Lightweight Angular Star Rating input",
+    "main": [
+        "./src/reevioRating.css",
+        "./src/reevioRating.js",
+        "./src/reevioRating.partial.html"
+    ],
+    "keywords": [
+        "bootstrap",
+        "star",
+        "rating"
+    ],
+    "dependencies": {
+        "jquery": ">= 1.9.0",
+        "bootstrap": ">= 3.0.0"
+    },
+    "license": "BSD-3",
+    "ignore": [
+        "**/.*",
+        "demo.html"
+    ]
+}
