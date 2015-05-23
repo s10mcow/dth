@@ -40,4 +40,8 @@ angular.module('WB.Constants', [])
 		notAuthenticated: 'auth-not-authenticated',
 		notAuthorized: 'auth-not-authorized',
 		profile: 'profile'
-	});
+	})
+
+    .constant('HELPERS', {
+        loadedNames: 'names-loaded'
+    });

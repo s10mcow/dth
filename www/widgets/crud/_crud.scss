@@ -20,10 +20,6 @@
         }
     }
 
-    select {
-        margin-bottom: 10px;
-    }
-
     form {
         padding-bottom: 20px;
     }
@@ -31,8 +27,9 @@
     label {
         text-align: left;
     }
-    input {
+    input, textarea {
         color: #333;
+        font-weight: 600;
         margin-bottom: 20px;
     }
 
@@ -41,14 +38,30 @@
         font-size: $font-size-xlarge;
     }
 
+    .delete {
+        background-color: $brand-danger;
+        font-size: $font-size-xlarge;
+    }
+
+    .input-label {
+        font-size: $font-size-xlarge;
+    }
+
+    select {
+        font-size: $font-size-xlarge;
+        padding: 0 40px 0 0;
+    }
+
+}
+
+
+footer {
+    position: relative;
 
     .camera {
         position: fixed;
         bottom: 10px;
         left: 10px;
         background: $complimentary3;
-    }
-
-    .switch {
     }
 }

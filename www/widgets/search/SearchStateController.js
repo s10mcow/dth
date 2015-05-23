@@ -7,24 +7,21 @@
 
 		.controller('SearchStateController', SearchStateController);
 
-	SearchStateController.$inject = ['$scope', 'resolveWines'];
+	SearchStateController.$inject = ['resolveWines', '$rootScope', '$timeout', 'HELPERS'];
 
-	function SearchStateController($scope, resolveWines) {
+	function SearchStateController(resolveWines, $rootScope, $timeout, HELPERS) {
 
-		$scope.wineNames = '';
+        var wineArr = [];
 
-		resolveWines.data
+		wineArr = resolveWines.data
 			.map(function (wine) {
 				return wine.name;
-			})
-			.forEach(function (name, index, array) {
-				if (index < array.length - 1) {
-					$scope.wineNames += name + ', ';
-				} else {
-					$scope.wineNames += name;
-				}
 			});
 
+
+        $timeout(function () {
+            $rootScope.$broadcast(HELPERS.loadedNames, wineArr)
+        });
 	}
 
 }());

@@ -27,12 +27,12 @@
     <script src="lib/ui-router/release/angular-ui-router.js"></script>
     <script src="lib/lodash/lodash.js"></script>
     <script src="lib/awesomplete/awesomplete.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
+
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-
-
     <script src="scripts/app.js"></script>
     <script src="scripts/constants.js"></script>
     <script src="scripts/templates.js"></script>
@@ -46,6 +46,12 @@
 
     <script src="scripts/services/cameraService.js"></script>
 
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               Directives
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+    <script src="scripts/directives/awesomepleteDirective.js"></script>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                Widgets
@@ -73,6 +79,12 @@
     <script src="widgets/results/showWinesService.js"></script>
     <script src="widgets/results/ShowWinesController.js"></script>
 
+    <!--Login-->
+    <script src="widgets/login/LoginController.js"></script>
+
+    <!--Profile-->
+    <script src="widgets/profile/ProfileController.js"></script>
+
     <!--Rating-->
     <script src="widgets/rating/rating.js"></script>
     <!-- endbuild -->
@@ -80,9 +92,14 @@
 
 </head>
 <body ng-app="wineBrainApp" class="platform-android">
-
 <div class="container">
     <div ui-view></div>
 </div>
+
+<div id="fb-root"></div>
+
+<!--For development purposes on the browser-->
+<!--<script src="scripts/facebookConnectPlugin.js"></script>-->
+
 </body>
 </html>

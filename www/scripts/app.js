@@ -21,6 +21,7 @@ angular
         'ngResource',
         'ngSanitize',
         'ngTouch',
+        'ngCordova',
 		'ionic',
         'ui.bootstrap'
     ])
@@ -111,31 +112,88 @@ angular
                 }
             })
 
+            .state('home.profile', {
+                url: 'profile',
+                views: {
+                    'content@home': {
+                        controller: 'ProfileController as profileCtrl',
+                        templateUrl: PATH.widgets + 'profile/profile.tpl.html'
+                    }
+                }
+            })
+
+            .state('home.login', {
+                url: 'login',
+                views: {
+                    'content@home': {
+                        controller: 'LoginController as loginCtrl',
+                        templateUrl: PATH.widgets + 'login/login.tpl.html'
+                    }
+                }
+            })
+
             .state('home.crud', {
-                url: 'change-the-brain',
+                url: 'change-the-brain/',
+                abstract: true,
+                data: {
+                    authorizedRoles: [USER_ROLES.all]
+                }
+            })
+
+            .state('home.crud.add', {
+                url: 'add',
                 views: {
                     'content@home': {
                         controller: 'CrudController as crudCtrl',
-                        templateUrl: PATH.widgets + 'crud/crud.tpl.html'
+                        templateUrl: PATH.widgets + 'crud/crud-add.tpl.html'
                     }
                 },
                 data: {
                     authorizedRoles: [USER_ROLES.all]
                 }
             })
+
+            .state('home.crud.edit', {
+                url: 'edit',
+                views: {
+                    'content@home': {
+                        controller: 'CrudController as crudCtrl',
+                        templateUrl: PATH.widgets + 'crud/crud-edit.tpl.html'
+                    }
+                },
+                data: {
+                    authorizedRoles: [USER_ROLES.all]
+                }
+            })
+
+            .state('home.crud.delete', {
+                url: 'delete',
+                views: {
+                    'content@home': {
+                        controller: 'CrudController as crudCtrl',
+                        templateUrl: PATH.widgets + 'crud/crud-delete.tpl.html'
+                    }
+                },
+                data: {
+                    authorizedRoles: [USER_ROLES.all]
+                }
+            })
+
     })
 
-    .run(function ($rootScope, $state, $stateParams, $ionicPlatform, $ionicPopup) {
+    .run(function ($rootScope, $state, $stateParams, $ionicPlatform) {
         $ionicPlatform.ready(function () {
 
             if(window.StatusBar) {
                 StatusBar.styleDefault();
             }
 
+            var appID = 684841048311727;
+            var version = "v2.3"; // or leave blank and default is v2.0
+            //facebookConnectPlugin.browserInit(appID, version);
+
+
         });
-
-
-
 
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;

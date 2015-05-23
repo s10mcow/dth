@@ -1,0 +1,55 @@
+
+<ion-content>
+    <article class="crud">
+
+
+        <header class="header">
+            <h3>Add a new wine to the brain.</h3>
+        </header>
+
+        <form ng-if="crudCtrl.view.add" ng-submit="crudCtrl.addNewWine(crudCtrl.newWine)">
+
+            <label for="name"></label>
+            <input id="name" type="text" placeholder="Name" ng-model="crudCtrl.newWine.name"/>
+
+            <label for="origin"></label>
+            <input id="origin" type="text" placeholder="Origin" ng-model="crudCtrl.newWine.origin"/>
+
+            <label for="year"></label>
+            <input id="year" type="text" placeholder="Year" ng-model="crudCtrl.newWine.year"/>
+
+            <label for="price"></label>
+            <input id="price" type="text" placeholder="Price" ng-model="crudCtrl.newWine.price"/>
+
+            <label for="taste"></label>
+            <input id="taste" type="text" placeholder="Taste" ng-model="crudCtrl.newWine.taste"/>
+
+            <label for="alcohol"></label>
+            <input id="alcohol" type="text" placeholder="Alcohol" ng-model="crudCtrl.newWine.alcohol"/>
+
+            <textarea id="comment" placeholder="Comments" ng-model="crudCtrl.newWine.comments"></textarea>
+
+            <label for="rating">Rating: <span ng-bind="crudCtrl.newWine.rating"></span></label>
+            <input id="rating" type="range" min="1" max="5" ng-model="crudCtrl.newWine.rating"/>
+
+            <label for="headache">Headache: <span ng-bind="crudCtrl.newWine.headache"></span></label>
+            <input id="headache" type="range" min="0" max="5" placeholder="" ng-model="crudCtrl.newWine.headache"/>
+
+            <img ng-show="crudCtrl.base64Img" ng-src="{{crudCtrl.base64Img}}" alt="wine label"/>
+
+            <button class="btn btn--round add" type="submit"><i class="icon ion-archive"></i></button>
+
+        </form>
+
+
+
+    </article>
+</ion-content>
+
+<footer>
+    <button class="camera btn btn--round btn--shadow" ng-click="crudCtrl.getImage()"><i class="icon ion-android-camera"></i></button>
+
+    <div class="switch">
+        <button class="btn btn--shadow btn--round__fixed" ng-click="$state.go('home.crud.edit')"> <i class="icon ion-edit"></i></button>
+    </div>
+</footer>

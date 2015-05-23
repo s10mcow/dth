@@ -1,0 +1,36 @@
+
+<ion-content>
+    <article class="crud">
+
+
+        <header class="header">
+            <h3>Delete a wine.</h3>
+        </header>
+
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">Wines</div>
+
+                <select
+                    ng-options="wine.id as wine.name for wine in crudCtrl.wines"
+                    ng-model="crudCtrl.wineId"
+                    ng-change="crudCtrl.findById(crudCtrl.wineId)">
+                </select>
+            </label>
+        </div>
+
+
+        <form>
+            <img ng-if="crudCtrl.base64Img" ng-src="{{crudCtrl.base64Img}}" alt="wine label"/>
+        </form>
+
+        <button ng-click="crudCtrl.removeWine(crudCtrl.editWine)" class="btn btn--round delete" type="submit"><i class="icon ion-android-delete"></i></button>
+
+    </article>
+</ion-content>
+
+<footer>
+    <div class="switch">
+        <button ng-if="!crudCtrl.view.add" class="btn btn--shadow btn--round__fixed" ng-click="crudCtrl.toggleView()"> <i class="icon ion-plus"></i></button>
+    </div>
+</footer>

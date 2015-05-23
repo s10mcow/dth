@@ -1,0 +1,65 @@
+
+<ion-content>
+    <article class="crud">
+
+
+        <header class="header">
+            <h3>Edit a wine in the brain.</h3>
+        </header>
+
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">Wines</div>
+
+                <select
+                    ng-options="wine.id as wine.name for wine in crudCtrl.wines"
+                    ng-model="crudCtrl.wineId"
+                    ng-change="crudCtrl.findById(crudCtrl.wineId)">
+                </select>
+            </label>
+        </div>
+
+        <form ng-submit="crudCtrl.submitEditedWine(crudCtrl.editWine)">
+
+            <label for="editName"></label>
+            <input id="editName" type="text" placeholder="Name" ng-model="crudCtrl.editWine.name"/>
+
+            <label for="editOrigin"></label>
+            <input id="editOrigin" type="text" placeholder="Origin" ng-model="crudCtrl.editWine.origin"/>
+
+            <label for="editYear"></label>
+            <input id="editYear" type="text" placeholder="Year" ng-model="crudCtrl.editWine.year"/>
+
+            <label for="editPrice"></label>
+            <input id="editPrice" type="text" placeholder="Price" ng-model="crudCtrl.editWine.price"/>
+
+            <label for="editTaste"></label>
+            <input id="editTaste" type="text" placeholder="Taste" ng-model="crudCtrl.editWine.taste"/>
+
+            <label for="editAlcohol"></label>
+            <input id="editAlcohol" type="text" placeholder="Alcohol" ng-model="crudCtrl.editWine.alcohol"/>
+
+            <textarea id="editComment" placeholder="Comments" ng-model="crudCtrl.editWine.comments"></textarea>
+
+            <label for="editRating">Rating: <span ng-bind="crudCtrl.editWine.rating"></span></label>
+            <input id="editRating" type="range" min="1" max="5" ng-model="crudCtrl.editWine.rating"/>
+
+            <label for="editHeadache">Headache: <span ng-bind="crudCtrl.editWine.headache"></span></label>
+            <input id="editHeadache" type="range" min="0" max="5" placeholder="" ng-model="crudCtrl.editWine.headache"/>
+
+            <img ng-show="crudCtrl.base64Img" ng-src="{{crudCtrl.base64Img}}" alt="wine label"/>
+
+            <button class="btn btn--round edit" type="submit"><i class="icon ion-archive"></i></button>
+
+        </form>
+
+    </article>
+</ion-content>
+
+<footer>
+    <button class="camera btn btn--round btn--shadow" ng-click="crudCtrl.getImage()"><i class="icon ion-android-camera"></i></button>
+
+    <div class="switch">
+        <button class="btn btn--shadow btn--round__fixed" ng-click="$state.go('home.crud.add')"> <i class="icon ion-plus"></i></button>
+    </div>
+</footer>

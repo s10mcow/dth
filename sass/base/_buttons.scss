@@ -73,6 +73,12 @@
     background: $complimentary6;
 }
 
+.btn--round--fb {
+    @extend .btn--round;
+    background: $facebook;
+}
+
+
 
 .btn--block {
     width: 100%;

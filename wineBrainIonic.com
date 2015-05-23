@@ -16,4 +16,6 @@ server {
   location /images/ {
   }
 
+  error_page 405    =200 $uri;
+
 }
