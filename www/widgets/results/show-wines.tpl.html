@@ -40,12 +40,15 @@
         <ion-list>
             <ion-item class="card results" ng-repeat="wine in showWinesCtrl.wines">
 
+
                 <div class="item">
-                    <h2 class="item country">
+                    <h2 class="country">
                         <span>Product of Portugal</span>
                         <br/>
                         <rating ng-model="wine.rating" readonly="true"></rating>
+                        <wb-favorite wine="wine"></wb-favorite>
                     </h2>
+
                 </div>
 
                 <div class="item item-avatar">
@@ -62,19 +65,33 @@
                 <div  class="item item-body">
                     <div ng-if="wine.base64Img" class="item item-image">
                         <img class="full-image" ng-src="{{wine.base64Img}}" alt=""/>
-                        <!--<div class="label" ng-class="{'no-label icon ion-wineglass': !wine.base64Img}" style="background-image: url({{wine.base64Img}})"></div>-->
                     </div>
 
                     <p class="taste" ng-bind="wine.taste"></p>
 
                     <p class="comments" ng-bind="wine.comments"></p>
 
-
-
-                    <footer>
+                    <div class="bottom">
                         <span class="alcohol" ng-bind="wine.alcohol"></span>
                         <span class="headache" ng-bind="wine.headache"></span> <span class="headache-icon"></span>
-                    </footer>
+                    </div>
+
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-thumbsup"></i>
+                            Like
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-chatbox"></i>
+                            Comment
+                        </a>
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-share"></i>
+                            Share
+                        </a>
+                    </div>
+
+
                 </div>
 
             </ion-item>

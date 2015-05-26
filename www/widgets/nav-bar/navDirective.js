@@ -2,10 +2,9 @@
 
 	'use strict';
 
+	var app = angular.module('WB.Widgets');
 
-	angular.module('WB.Directives.NavMenu', [])
-
-		.directive('wbNavMenu', wbNavMenu);
+    app.directive('wbNavMenu', wbNavMenu);
 
 	wbNavMenu.$inject = ['$rootScope'];
 

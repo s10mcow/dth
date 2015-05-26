@@ -3,9 +3,9 @@
 	'use strict';
 
 
-	angular.module('WB.Directives.SearchForm', [])
+    var app = angular.module('WB.Widgets');
 
-		.directive('wbSearchForm', wbSearchForm);
+    app.directive('wbSearchForm', wbSearchForm);
 
 	wbSearchForm.$inject = ['PATH'];
 

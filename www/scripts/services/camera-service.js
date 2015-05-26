@@ -1,8 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('WB.Services.Camera', [])
-        .factory('wbCamera', wbCamera);
+    var app = angular.module('WB.Services');
+
+    app.factory('wbCamera', wbCamera);
 
     wbCamera.$inject = ['$q'];
 

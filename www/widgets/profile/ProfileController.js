@@ -1,14 +1,69 @@
 (function () {
 	'use strict';
 
-	var app = angular.module('WB.Widgets.Profile', []);
+	var app = angular.module('WB.Widgets');
 
     app.controller('ProfileController', ProfileController);
 
-    ProfileController.$inject = ['$http', '$log', '$cookies', '$cordovaFacebook', 'AUTH_EVENTS'];
+    ProfileController.$inject = ['$log', '$cordovaFacebook', '$ionicLoading', 'wbUsers', 'wbProfile'];
 
-	function ProfileController($http, $log, $cookies, $cordovaFacebook, AUTH_EVENTS) {
+	function ProfileController($log, $cordovaFacebook, $ionicLoading, wbUsers, wbProfile) {
 
+        var vm = this;
+
+        vm.user = {};
+
+        $cordovaFacebook.api('me')
+            .then(getMe)
+            .then(amIinDB)
+            .then(setUser)
+            .catch(error);
+
+
+        function getMe(me) {
+            vm.user.firstName = me.first_name;
+            vm.user.lastName = me.last_name;
+            vm.user.email = me.email;
+            vm.user.name = me.name;
+            vm.user.id = me.id;
+            $ionicLoading.hide();
+            return wbUsers.one(me.id).get();
+        }
+
+
+        function amIinDB(user) {
+
+            if(!user) {
+                var info = {
+                    _id: vm.user.id,
+                    email: vm.user.email,
+                    name: vm.user.name,
+                    firstName: vm.user.firstName,
+                    lastName: vm.user.lastName
+                };
+
+                return wbUsers.post(JSON.stringify(info));
+
+            } else {
+
+                user._id = vm.user.id;
+                user.email = vm.user.email;
+                user.name = vm.user.name;
+                user.firstName = vm.user.firstName;
+                user.lastName = vm.user.lastName;
+
+                return user.put();
+            }
+        }
+
+        function setUser(user) {
+            return wbProfile.user(user);
+        }
+
+
+        function error(err) {
+            $log.debug(err);
+        }
 
 
 	}

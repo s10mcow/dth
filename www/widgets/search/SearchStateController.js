@@ -3,9 +3,9 @@
 
 	'use strict';
 
-	angular.module('WB.Controllers.SearchState', [])
+    var app = angular.module('WB.Widgets');
 
-		.controller('SearchStateController', SearchStateController);
+    app.controller('SearchStateController', SearchStateController);
 
 	SearchStateController.$inject = ['resolveWines', '$rootScope', '$timeout', 'HELPERS'];
 

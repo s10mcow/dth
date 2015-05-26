@@ -11,9 +11,23 @@
         white-space: normal;
     }
 
-    .item.country {
+    .country {
         margin-bottom: -20px;
+        a {
+            &.favorite {
+                position: absolute;
+                top: 6%;
+                left: 93%;
+                font-size: $font-size-xxxlarge;
+                &.active {
+                    color: red;
+                    opacity: 1;
+                }
+            }
+        }
     }
+
+
 
     .name {
         font-size: $font-size-xxlarge;
@@ -46,8 +60,6 @@
     }
 
 
-
-
     .label {
         height: 200px;
         width: 200px;
@@ -61,21 +73,21 @@
         font-size: 135px;
     }
 
-    footer {
+    .bottom {
         margin-top: 40px;
 
         .headache, .alcohol {
             position: absolute;
-            bottom: 5px;
+            bottom: 55px;
         }
         .headache {
-            right: 45px;
+            right: 50px;
         }
 
         .headache-icon {
             position: absolute;
-            right: 0;
-            bottom: 10px;
+            right: 5px;
+            bottom: 60px;
             display: block;
             width: 40px;
             height: 40px;
@@ -85,7 +97,7 @@
         }
 
         .alcohol {
-            left: 10px;
+            left: 15px;
             &:after {
                 content: '%';
             }

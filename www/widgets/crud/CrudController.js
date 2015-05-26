@@ -1,8 +1,9 @@
 (function () {
     'use strict';
 
-    angular.module('WB.Controllers.Crud', [])
-        .controller('CrudController', CrudController);
+    var app = angular.module('WB.Widgets');
+
+    app.controller('CrudController', CrudController);
 
     CrudController.$inject = ['$scope', 'wbCrud', 'wbCamera', 'wbSearch', '$ionicLoading', '$state', '$log'];
 

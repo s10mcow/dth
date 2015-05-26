@@ -1,13 +1,13 @@
 (function () {
 	'use strict';
 
-	var app = angular.module('WB.Widgets.Login', []);
+	var app = angular.module('WB.Widgets');
 
     app.controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$http', '$log', '$state', '$cordovaFacebook', 'AUTH_EVENTS'];
+    LoginController.$inject = ['$log', '$state', '$cordovaFacebook', '$ionicPlatform', '$ionicLoading'];
 
-	function LoginController($http, $log, $state, $cordovaFacebook, AUTH_EVENTS) {
+	function LoginController($log, $state, $cordovaFacebook, $ionicPlatform, $ionicLoading) {
 
 		var vm = this;
 
@@ -15,16 +15,20 @@
 
         function login() {
 
-            facebookConnectPlugin.login(['public_profile'],
-                function (response) {
-                    $log.debug(response);
-                    //var accessToken = response.authResponse.accessToken;
-                    //console.log(accessToken);
-                    //facebookConnectPlugin.api()
-                    $state.go('home.profile');
-                },
-                function (response) { $log.debug(JSON.stringify(response)); }
-            );
+            $ionicPlatform.ready(function () {
+                $ionicLoading.show({
+                    template: 'Checking the manifest.'
+                });
+                facebookConnectPlugin.login(['public_profile', 'user_friends'],
+                    function (response) {
+                        $log.debug(response);
+                        $state.go('home.profile');
+                    },
+                    function (response) {
+                        $log.debug(JSON.stringify(response));
+                    }
+                );
+            });
 
         }
 

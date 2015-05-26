@@ -10,22 +10,13 @@
  */
 angular
     .module('wineBrainApp', [
-        'WB.Services',
-        'WB.Widgets',
-        'WB.Templates',
-        'WB.Constants',
-
-        'ui.router',
-        'ngAnimate',
-        'ngCookies',
-        'ngResource',
-        'ngSanitize',
-        'ngTouch',
-        'ngCordova',
-		'ionic',
-        'ui.bootstrap'
+        'WB.Core',
+        'WB.Vendors'
     ])
-    .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $ionicConfigProvider, $compileProvider, PATH, USER_ROLES) {
+
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $ionicConfigProvider, $compileProvider, RestangularProvider, PATH, USER_ROLES, API_URL) {
+
+        RestangularProvider.setBaseUrl(API_URL);
 
         $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|blob):|data:image\//);
 
@@ -190,8 +181,7 @@ angular
 
             var appID = 684841048311727;
             var version = "v2.3"; // or leave blank and default is v2.0
-            //facebookConnectPlugin.browserInit(appID, version);
-
+            facebookConnectPlugin.browserInit(appID, version);
 
         });
 

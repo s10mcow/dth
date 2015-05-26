@@ -1607,8 +1607,16 @@ footer {
     font-size: 31px;
     text-transform: capitalize;
     white-space: normal; }
-  .results .item.country {
+  .results .country {
     margin-bottom: -20px; }
+    .results .country a.favorite {
+      position: absolute;
+      top: 6%;
+      left: 93%;
+      font-size: 35px; }
+      .results .country a.favorite.active {
+        color: red;
+        opacity: 1; }
   .results .name {
     font-size: 31px;
     text-transform: uppercase;
@@ -1635,24 +1643,24 @@ footer {
     margin: 0 auto; }
   .results .no-label {
     font-size: 135px; }
-  .results footer {
+  .results .bottom {
     margin-top: 40px; }
-    .results footer .headache, .results footer .alcohol {
+    .results .bottom .headache, .results .bottom .alcohol {
       position: absolute;
-      bottom: 5px; }
-    .results footer .headache {
-      right: 45px; }
-    .results footer .headache-icon {
+      bottom: 55px; }
+    .results .bottom .headache {
+      right: 50px; }
+    .results .bottom .headache-icon {
       position: absolute;
-      right: 0;
-      bottom: 10px;
+      right: 5px;
+      bottom: 60px;
       display: block;
       width: 40px;
       height: 40px;
       background: url("../images/headache.png");
       background-size: contain;
       background-repeat: no-repeat; }
-    .results footer .alcohol {
-      left: 10px; }
-      .results footer .alcohol:after {
+    .results .bottom .alcohol {
+      left: 15px; }
+      .results .bottom .alcohol:after {
         content: '%'; }

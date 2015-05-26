@@ -2,9 +2,9 @@
 
 	'use strict';
 
-	angular.module('WB.Services.ShowWines', [])
+	var app = angular.module('WB.Widgets');
 
-		.factory('wbShowWines', wbShowWines);
+    app.factory('wbShowWines', wbShowWines);
 
     wbShowWines.$inject = ['$http'];
 

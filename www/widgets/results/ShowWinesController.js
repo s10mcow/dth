@@ -2,9 +2,9 @@
 
 	'use strict';
 
-	angular.module('WB.Controllers.ShowWines', [])
-		.controller('ShowWinesController', ShowWinesController);
+	var app = angular.module('WB.Widgets');
 
+    app.controller('ShowWinesController', ShowWinesController);
 
     ShowWinesController.$inject = ['$ionicLoading', 'results'];
 

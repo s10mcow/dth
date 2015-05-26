@@ -1,8 +1,9 @@
 (function () {
 	'use strict';
 
-	angular.module('WB.Controllers.NavBar', [])
-		.controller('NavBarController', NavBarController);
+	var app = angular.module('WB.Widgets');
+
+    app.controller('NavBarController', NavBarController);
 
 	NavBarController.$inject = ['$rootScope', 'AUTH_EVENTS'];
 

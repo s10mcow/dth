@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
 
     <title>DtH</title>
 
-    <base href="">
+    <base href="/">
     <link rel="stylesheet" href="lib/ionic/css/ionic.css"/>
     <link rel="stylesheet" href="lib/awesomplete/awesomplete.css"/>
     <link href="css/styles.css" rel="stylesheet">
@@ -27,6 +27,7 @@
     <script src="lib/ui-router/release/angular-ui-router.js"></script>
     <script src="lib/lodash/lodash.js"></script>
     <script src="lib/awesomplete/awesomplete.js"></script>
+    <script src="lib/restangular/dist/restangular.js"></script>
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -36,15 +37,15 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/constants.js"></script>
     <script src="scripts/templates.js"></script>
-    <script src="widgets/widgets.js"></script>
-    <script src="scripts/services/services.js"></script>
+    <script src="scripts/modules-setup.js"></script>
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                Services
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-    <script src="scripts/services/cameraService.js"></script>
+    <script src="scripts/services/camera-service.js"></script>
+    <script src="scripts/services/user-service.js"></script>
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,10 +61,8 @@
     <!--Nav-Bar-->
     <script src="widgets/nav-bar/navDirective.js"></script>
     <script src="widgets/nav-bar/NavBarController.js"></script>
-    <script src="widgets/nav-bar/navBarWidget.js"></script>
 
     <!--Search-->
-    <script src="widgets/search/searchWidget.js"></script>
     <script src="widgets/search/searchFormDirective.js"></script>
     <script src="widgets/search/searchService.js"></script>
     <script src="widgets/search/SearchFormController.js"></script>
@@ -71,11 +70,9 @@
 
     <!--Crud-->
     <script src="widgets/crud/crudService.js"></script>
-    <script src="widgets/crud/crudWidget.js"></script>
     <script src="widgets/crud/CrudController.js"></script>
 
     <!--Results-->
-    <script src="widgets/results/showWinesWidget.js"></script>
     <script src="widgets/results/showWinesService.js"></script>
     <script src="widgets/results/ShowWinesController.js"></script>
 
@@ -84,9 +81,13 @@
 
     <!--Profile-->
     <script src="widgets/profile/ProfileController.js"></script>
+    <script src="widgets/profile/profile-service.js"></script>
 
     <!--Rating-->
     <script src="widgets/rating/rating.js"></script>
+
+    <script src="widgets/favorite/favorite-directive.js"></script>
+
     <!-- endbuild -->
 
 
@@ -99,7 +100,7 @@
 <div id="fb-root"></div>
 
 <!--For development purposes on the browser-->
-<!--<script src="scripts/facebookConnectPlugin.js"></script>-->
+<script src="scripts/facebookConnectPlugin.js"></script>
 
 </body>
 </html>

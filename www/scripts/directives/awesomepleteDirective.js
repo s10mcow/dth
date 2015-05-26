@@ -2,7 +2,7 @@
 
     'use strict';
 
-    var app = angular.module('WB.Awesomplete', []);
+    var app = angular.module('WB.Directives');
 
     app.directive('awesomplete', awesomplete);
 

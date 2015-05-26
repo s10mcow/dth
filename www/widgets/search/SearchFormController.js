@@ -2,12 +2,11 @@
 
 	'use strict';
 
-	angular.module('WB.Controllers.SearchForm', [])
-		.controller('SearchFormController', SearchFormController);
+	var app = angular.module('WB.Widgets');
 
+    app.controller('SearchFormController', SearchFormController);
 
 	SearchFormController.$inject = ['$scope', '$state', 'wbSearch'];
-
 
 	function SearchFormController($scope, $state, wbSearch) {
 

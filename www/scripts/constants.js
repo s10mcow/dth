@@ -44,4 +44,6 @@ angular.module('WB.Constants', [])
 
     .constant('HELPERS', {
         loadedNames: 'names-loaded'
-    });
+    })
+
+    .constant('API_URL', 'http://wine-brain.herokuapp.com');

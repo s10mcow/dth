@@ -2,28 +2,28 @@
 
 	'use strict';
 
-	angular.module('WB.Services.Crud', [])
+	var app = angular.module('WB.Widgets');
 
-		.factory('wbCrud', wbCrud);
+    app.factory('wbCrud', wbCrud);
 
-	wbCrud.$inject = ['$http'];
+	wbCrud.$inject = ['$http', 'API_URL'];
 
-	function wbCrud($http) {
+	function wbCrud($http, API_URL) {
 
         var service = {};
 
         service.addNewWine = function (wine) {
             wine = JSON.stringify(wine);
-                return $http.post('http://wine-brain.herokuapp.com/wines', wine);
+            return $http.post(API_URL + '/wines', wine);
         };
 
         service.editWine = function (wine) {
             wine = JSON.stringify(wine);
-            return $http.put('http://wine-brain.herokuapp.com/wines', wine);
+            return $http.put(API_URL + '/wines', wine);
         };
 
         service.removeWine = function (id) {
-            return $http.delete('http://wine-brain.herokuapp.com/wines/' + id._id);
+            return $http.delete(API_URL + '/wines/' + id._id);
         };
 
         return service;

@@ -2,9 +2,9 @@
 
 	'use strict';
 
-	angular.module('WB.Services.Search', [])
+    var app = angular.module('WB.Widgets');
 
-		.factory('wbSearch', wbSearch);
+    app.factory('wbSearch', wbSearch);
 
 	wbSearch.$inject = ['$http'];
 
