@@ -1,11 +1,24 @@
 
-<section class="search">
+<section class="search profile">
     <article>
         <header class="header">
             <h3 class="h1">Hi <span ng-bind="profileCtrl.user.firstName"></span>.</h3>
         </header>
 
-        <h3 class="h1">Favorites</h3>
+        <h1>Favorites</h1>
+
+        <ion-list>
+            <ion-item ng-repeat="fav in profileCtrl.user.favorites">
+                <h2>{{fav}}</h2>
+                <ion-option-button class="button-positive"
+                                   ng-click="share(item)">
+                    Share
+                </ion-option-button>
+
+            </ion-item>
+
+        </ion-list>
+
 
 
     </article>

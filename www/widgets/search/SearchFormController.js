@@ -6,9 +6,9 @@
 
     app.controller('SearchFormController', SearchFormController);
 
-	SearchFormController.$inject = ['$scope', '$state', 'wbSearch'];
+	SearchFormController.$inject = ['$scope', '$state', 'wbWines'];
 
-	function SearchFormController($scope, $state, wbSearch) {
+	function SearchFormController($scope, $state, wbWines) {
 
 
 		var vm = this;
@@ -20,9 +20,6 @@
         vm.wineNames = $scope.wineNames;
 
         function submitSearch(searchTerm) {
-
-
-
             $state.go('home.results', {searchTerm: searchTerm.toLowerCase().trim()});
 		}
 
@@ -31,7 +28,7 @@
 				console.log('empty wine bottle');
 				return;
 			}
-			wbSearch.addNewWine(wine)
+            wbWines.addNewWine(wine)
 				.success(function () {
 					console.log('added');
 				})

@@ -10,9 +10,10 @@
 
 	function wbProfile() {
 
-        var userInfo = [{
-            _id: 10155530167735024
-        }];
+        var userInfo = {
+            _id: 10155530167735024,
+            favorites: []
+        };
 
         var service = {};
 

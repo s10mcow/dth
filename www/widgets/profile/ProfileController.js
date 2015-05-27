@@ -5,9 +5,9 @@
 
     app.controller('ProfileController', ProfileController);
 
-    ProfileController.$inject = ['$log', '$cordovaFacebook', '$ionicLoading', 'wbUsers', 'wbProfile'];
+    ProfileController.$inject = ['$log', '$cordovaFacebook', '$ionicLoading', 'wbUsers', 'wbProfile', 'wbWines'];
 
-	function ProfileController($log, $cordovaFacebook, $ionicLoading, wbUsers, wbProfile) {
+	function ProfileController($log, $cordovaFacebook, $ionicLoading, wbUsers, wbProfile, wbWines) {
 
         var vm = this;
 
@@ -57,7 +57,10 @@
         }
 
         function setUser(user) {
-            return wbProfile.user(user);
+            vm.user.favorites = user[0].favorites;
+            wbProfile.user(user[0]);
+            $log.debug(wbWines.one());
+            return wbWines.one().customGET(vm.user.favorites)
         }
 
 

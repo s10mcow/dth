@@ -5,24 +5,19 @@
 
     app.controller('CrudController', CrudController);
 
-    CrudController.$inject = ['$scope', 'wbCrud', 'wbCamera', 'wbSearch', '$ionicLoading', '$state', '$log'];
+    CrudController.$inject = ['wbWines', 'wbCamera', '$ionicLoading', '$state', '$log'];
 
-    function CrudController($scope, wbCrud, wbCamera, wbSearch, $ionicLoading, $state, $log) {
+    function CrudController(wbWines, wbCamera, $ionicLoading, $state, $log) {
 
         var vm = this;
 
         //Variables
         vm.image = '';
-        vm.editWine = {
-            base64Img: ''
-        };
-        vm.newWine = {
+
+        vm.wine = {
+            base64Img: '',
             rating: 3,
             headache: 0
-        };
-        vm.view = {
-            add: true,
-            edit: false
         };
 
         //Methods
@@ -32,9 +27,8 @@
         vm.submitEditedWine = submitEditedWine;
         vm.removeWine = removeWine;
 
-
-        wbSearch.findAllWineNames()
-            .success(function (wines) {
+        wbWines.one('names').getList()
+            .then(function (wines) {
                 vm.wines = wines;
             });
 
@@ -44,43 +38,23 @@
                 return;
             }
             vm.base64Img = '';
-            vm.editWine = {
+            vm.wine = {
                 base64Img: ''
             };
             $ionicLoading.show({
                 template: 'Checking the stores!'
             });
-            wbSearch.findById(id)
-                .success(function (wine) {
-                    _.each(wine, function (value, key) {
-                        vm.editWine[key] = value;
-                        if (key === 'base64Img') {
-                            vm.base64Img = value;
-                        }
-                    });
+            wbWines.one(id).get()
+                .then(function (wine) {
+                    vm.wine = wine;
                     $ionicLoading.hide();
                 });
         }
 
         function submitEditedWine(wine) {
 
-            var exit = false;
-
-            _.forEach(wine, function (component, key) {
-                if (!component || typeof component === 'number' || key === 'base64Img') {
-                    return;
-                }
-                if (!wine.name) {
-                    exit = true;
-                }
-                wine[key] = component.toLowerCase();
-            });
-
-            wine.base64Img = vm.base64Img;
-
-            wbCrud.editWine(wine)
-                .success(function () {
-                    vm.base64Img = '';
+            wine.put()
+                .then(function () {
                     $state.go('home.results', {searchTerm: wine.name});
                 });
         }
@@ -111,17 +85,17 @@
                 return;
             }
 
-            wine.base64Img = vm.base64Img;
 
-            wbCrud.addNewWine(wine)
-                .success(function (data) {
-                    vm.newWine = {
+            wbWines.post(wine)
+                .then(function (wines) {
+                    vm.wine = {
                         rating: 3,
-                        headache: 0
+                        headache: 0,
+                        base64Img: ''
                     };
-                    vm.newWine.base64Img = '';
-                    $ionicLoading.hide();
-                    vm.wines = data;
+
+                    vm.wines = wines;
+
                     var options = {
                         method: 'feed',
                         name: vm.newWine.name,
@@ -137,9 +111,10 @@
 
                         }
                     );
+
                     $state.go('home.results', {searchTerm: wine.name});
                 })
-                .error(function (err) {
+                .catch(function (err) {
                     console.log(err);
                     $ionicLoading.hide();
                 });
@@ -148,7 +123,7 @@
 
         function getImage() {
             wbCamera.getPicture().then(function (imageData) {
-                vm.base64Img = imageData;
+                vm.wine.base64Img = imageData;
             }, function (err) {
                 console.log(err);
             });
@@ -160,16 +135,13 @@
                 template: 'Throwing Overboard!'
             });
 
-            var id = {_id: wine._id};
-
-
-            wbCrud.removeWine(id)
-                .success(function (data) {
+            wbWines.one(wine.id).remove()
+                .then(function (wines) {
                     $ionicLoading.hide();
-                    vm.wines = data;
+                    vm.wines = wines;
                 })
 
-                .error(function (err) {
+                .catch(function (err) {
                     $log.debug(err);
                     $ionicLoading.hide();
                 })

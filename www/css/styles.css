@@ -1664,3 +1664,6 @@ footer {
       left: 15px; }
       .results .bottom .alcohol:after {
         content: '%'; }
+
+.profile h1 {
+  color: white; }

@@ -12,9 +12,8 @@
                 <div class="input-label">Wines</div>
 
                 <select
-                    ng-options="wine.id as wine.name for wine in crudCtrl.wines"
-                    ng-model="crudCtrl.wineId"
-                    ng-change="crudCtrl.findById(crudCtrl.wineId)">
+                    ng-options="wine as wine.name for wine in crudCtrl.wines"
+                    ng-model="crudCtrl.wine">
                 </select>
             </label>
         </div>
@@ -24,7 +23,7 @@
             <img ng-if="crudCtrl.base64Img" ng-src="{{crudCtrl.base64Img}}" alt="wine label"/>
         </form>
 
-        <button ng-click="crudCtrl.removeWine(crudCtrl.editWine)" class="btn btn--round delete" type="submit"><i class="icon ion-android-delete"></i></button>
+        <button ng-click="crudCtrl.removeWine(crudCtrl.wine)" class="btn btn--round delete" type="submit"><i class="icon ion-android-delete"></i></button>
 
     </article>
 </ion-content>

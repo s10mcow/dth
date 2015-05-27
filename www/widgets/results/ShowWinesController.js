@@ -15,9 +15,9 @@
 
 		var vm = this;
 
-        vm.wines = results.data;
+        vm.wines = results;
 
-        window.wines = results.data;
+        window.wines = results;
 
 
 

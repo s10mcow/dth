@@ -4,37 +4,39 @@
 
     var app = angular.module('WB.Widgets');
 
-    app.factory('wbSearch', wbSearch);
+    app.factory('wbWines', wbWines);
 
-	wbSearch.$inject = ['$http'];
+    wbWines.$inject = ['$http', 'Restangular'];
 
 
-	function wbSearch($http) {
+	function wbWines($http, Restangular) {
 
-		var service = {};
+        return Restangular.service('wines');
 
-		service.findAllWines = function () {
-			return $http.get('https://wine-brain.herokuapp.com/wines');
-		};
-
-        service.findAllWineNames = function () {
-            return $http.get('https://wine-brain.herokuapp.com/wines/names');
-        };
-
-		service.findByName = function (name) {
-			return $http.get('https://wine-brain.herokuapp.com/wines/names/' + name);
-		};
-
-        service.findById = function (id) {
-            return $http.get('https://wine-brain.herokuapp.com/wines/' + id);
-        };
-
-		service.addNewWine = function (wine) {
-			wine = JSON.stringify(wine);
-			return $http.post('https://wine-brain.herokuapp.com/wines', wine);
-		};
-
-		return service;
+		//var service = {};
+		//
+		//service.findAllWines = function () {
+		//	return $http.get('https://wine-brain.herokuapp.com/wines');
+		//};
+		//
+		//service.findAllWineNames = function () {
+         //   return $http.get('https://wine-brain.herokuapp.com/wines/names');
+		//};
+		//
+		//service.findByName = function (name) {
+		//	return $http.get('https://wine-brain.herokuapp.com/wines/names/' + name);
+		//};
+		//
+		//service.findById = function (id) {
+         //   return $http.get('https://wine-brain.herokuapp.com/wines/' + id);
+		//};
+		//
+		//service.addNewWine = function (wine) {
+		//	wine = JSON.stringify(wine);
+		//	return $http.post('https://wine-brain.herokuapp.com/wines', wine);
+		//};
+		//
+		//return service;
 	}
 
 

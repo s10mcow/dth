@@ -19,35 +19,37 @@
             </label>
         </div>
 
-        <form ng-submit="crudCtrl.submitEditedWine(crudCtrl.editWine)">
+        <form ng-submit="crudCtrl.submitEditedWine(crudCtrl.wine)">
 
             <label for="editName"></label>
-            <input id="editName" type="text" placeholder="Name" ng-model="crudCtrl.editWine.name"/>
+            <input id="editName" type="text" placeholder="Name" ng-model="crudCtrl.wine.name"/>
 
             <label for="editOrigin"></label>
-            <input id="editOrigin" type="text" placeholder="Origin" ng-model="crudCtrl.editWine.origin"/>
+            <input id="editOrigin" type="text" placeholder="Origin" ng-model="crudCtrl.wine.origin"/>
 
             <label for="editYear"></label>
-            <input id="editYear" type="text" placeholder="Year" ng-model="crudCtrl.editWine.year"/>
+            <input id="editYear" type="text" placeholder="Year" ng-model="crudCtrl.wine.year"/>
 
             <label for="editPrice"></label>
-            <input id="editPrice" type="text" placeholder="Price" ng-model="crudCtrl.editWine.price"/>
+            <input id="editPrice" type="text" placeholder="Price" ng-model="crudCtrl.wine.price"/>
 
             <label for="editTaste"></label>
-            <input id="editTaste" type="text" placeholder="Taste" ng-model="crudCtrl.editWine.taste"/>
+            <input id="editTaste" type="text" placeholder="Taste" ng-model="crudCtrl.wine.taste"/>
 
             <label for="editAlcohol"></label>
-            <input id="editAlcohol" type="text" placeholder="Alcohol" ng-model="crudCtrl.editWine.alcohol"/>
+            <input id="editAlcohol" type="text" placeholder="Alcohol" ng-model="crudCtrl.wine.alcohol"/>
 
-            <textarea id="editComment" placeholder="Comments" ng-model="crudCtrl.editWine.comments"></textarea>
+            <textarea id="editComment" placeholder="Comments" ng-model="crudCtrl.wine.comments"></textarea>
 
-            <label for="editRating">Rating: <span ng-bind="crudCtrl.editWine.rating"></span></label>
-            <input id="editRating" type="range" min="1" max="5" ng-model="crudCtrl.editWine.rating"/>
+            <label for="editRating">Rating: <span ng-bind="crudCtrl.wine.rating"></span></label>
+            <input id="editRating" type="range" min="1" max="5" ng-model="crudCtrl.wine.rating"/>
 
-            <label for="editHeadache">Headache: <span ng-bind="crudCtrl.editWine.headache"></span></label>
-            <input id="editHeadache" type="range" min="0" max="5" placeholder="" ng-model="crudCtrl.editWine.headache"/>
+            <label for="editHeadache">Headache: <span ng-bind="crudCtrl.wine.headache"></span></label>
+            <input id="editHeadache" type="range" min="0" max="5" placeholder="" ng-model="crudCtrl.wine.headache"/>
 
-            <img ng-show="crudCtrl.base64Img" ng-src="{{crudCtrl.base64Img}}" alt="wine label"/>
+            <img ng-show="crudCtrl.wine.base64Img" ng-src="{{crudCtrl.wine.base64Img}}" alt="wine label"/>
+
+            <br/>
 
             <button class="btn btn--round edit" type="submit"><i class="icon ion-archive"></i></button>
 

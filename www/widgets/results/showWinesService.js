@@ -6,10 +6,10 @@
 
     app.factory('wbShowWines', wbShowWines);
 
-    wbShowWines.$inject = ['$http'];
+    wbShowWines.$inject = [];
 
 
-	function wbShowWines($http) {
+	function wbShowWines() {
 
 		var service = {};
 

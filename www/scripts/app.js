@@ -66,8 +66,8 @@ angular
                         template:'<wb-search-form></wb-search-form>',
                         controller: 'SearchStateController',
                         resolve: {
-                            resolveWines: function (wbSearch) {
-                                return wbSearch.findAllWineNames();
+                            resolveWines: function (wbWines) {
+                                return wbWines.one('names').getList();
                             }
                         }
                     }
@@ -84,15 +84,15 @@ angular
                         controller: 'ShowWinesController as showWinesCtrl',
                         templateUrl: PATH.widgets + 'results/show-wines.tpl.html',
                         resolve: {
-                            results: function (wbSearch, $stateParams, $ionicLoading) {
+                            results: function (wbWines, $stateParams, $ionicLoading) {
                                 $ionicLoading.show({
                                     template: 'Down the hatch!'
                                 });
 
                                 if($stateParams.searchTerm === 'all') {
-                                    return wbSearch.findAllWines();
+                                    return wbWines.getList();
                                 } else {
-                                    return wbSearch.findByName($stateParams.searchTerm)
+                                    return wbWines.one('names').all($stateParams.searchTerm).getList()
                                 }
                             }
                         }
@@ -110,6 +110,9 @@ angular
                         controller: 'ProfileController as profileCtrl',
                         templateUrl: PATH.widgets + 'profile/profile.tpl.html'
                     }
+                },
+                data: {
+                    authorizedRoles: [USER_ROLES.user]
                 }
             })
 
@@ -120,6 +123,9 @@ angular
                         controller: 'LoginController as loginCtrl',
                         templateUrl: PATH.widgets + 'login/login.tpl.html'
                     }
+                },
+                data: {
+                    authorizedRoles: [USER_ROLES.all]
                 }
             })
 

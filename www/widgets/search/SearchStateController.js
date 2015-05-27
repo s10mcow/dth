@@ -13,7 +13,7 @@
 
         var wineArr = [];
 
-		wineArr = resolveWines.data
+		wineArr = resolveWines
 			.map(function (wine) {
 				return wine.name;
 			});

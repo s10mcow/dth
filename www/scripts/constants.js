@@ -47,3 +47,4 @@ angular.module('WB.Constants', [])
     })
 
     .constant('API_URL', 'http://wine-brain.herokuapp.com');
+    //.constant('API_URL', 'http://localhost:3000');

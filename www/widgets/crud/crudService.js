@@ -6,9 +6,9 @@
 
     app.factory('wbCrud', wbCrud);
 
-	wbCrud.$inject = ['$http', 'API_URL'];
+	wbCrud.$inject = ['Restangular', '$http', 'API_URL'];
 
-	function wbCrud($http, API_URL) {
+	function wbCrud(Restangular, $http, API_URL) {
 
         var service = {};
 

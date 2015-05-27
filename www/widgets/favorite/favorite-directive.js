@@ -48,9 +48,10 @@
         function addFavorite(item) {
             favService.addFavorite(item);
         }
+
     }
 
-    app.service('favService', favService);
+    app.factory('favService', favService);
 
     favService.$inject = ['wbProfile', '$log', 'wbUsers'];
 
@@ -58,15 +59,32 @@
 
         var service = {};
         var item;
-        var wbFav = wbUsers.one(wbProfile.user()[0]._id);
+        var user = wbProfile.user();
+        var wbFav = wbUsers.one(user._id);
 
         service.init = init;
         service.addFavorite = addFavorite;
 
 
-        function init(el) {
+        function addFavorite(i) {
+            item = i;
+        }
 
+        function init(el, i) {
+            item = i;
+            user = wbProfile.user();
+            setUpClasses(el);
             clickEvent(el);
+        }
+
+        function setUpClasses(el) {
+            user.favorites.forEach(function (fav) {
+                if(fav === item._id) {
+                    el.toggleClass('ion-android-favorite-outline');
+                    el.toggleClass('ion-android-favorite');
+                    el.toggleClass('active');
+                }
+            })
         }
 
         function clickEvent(el) {
@@ -74,12 +92,13 @@
                 el.toggleClass('ion-android-favorite-outline');
                 el.toggleClass('ion-android-favorite');
                 el.toggleClass('active');
-                el.hasClass('active') ? add(item) : remove(item);
-            });
-        }
 
-        function addFavorite(i) {
-            item = i;
+                var edit = el.hasClass('active') ? add : remove;
+
+                edit(item).then(function (u) {
+                    wbProfile.user(u);
+                })
+            });
         }
 
         function add(item) {
