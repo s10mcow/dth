@@ -6,12 +6,26 @@
 
     app.directive('wbFavorite', wbFavorite);
 
-    wbFavorite.$inject = [];
+    wbFavorite.$inject = ['wbProfile'];
 
-    function wbFavorite() {
+    function wbFavorite(wbProfile) {
 
         var linker = function (scope, element, attr, favCtrl) {
+            var user = wbProfile.user();
+
             favCtrl.init(element);
+
+            setUpClasses(element);
+
+            function setUpClasses(el) {
+                user.favorites.forEach(function (fav) {
+                    if(fav === favCtrl.wine._id) {
+                        el.toggleClass('ion-android-favorite-outline');
+                        el.toggleClass('ion-android-favorite');
+                        el.toggleClass('active');
+                    }
+                })
+            }
         };
 
         return {
@@ -41,8 +55,8 @@
         vm.init = init;
         vm.addFavorite = addFavorite;
 
-        function init(element) {
-            favService.init(element);
+        function init(element, item) {
+            favService.init(element, item);
         }
 
         function addFavorite(item) {
@@ -72,20 +86,10 @@
 
         function init(el, i) {
             item = i;
-            user = wbProfile.user();
-            setUpClasses(el);
             clickEvent(el);
         }
 
-        function setUpClasses(el) {
-            user.favorites.forEach(function (fav) {
-                if(fav === item._id) {
-                    el.toggleClass('ion-android-favorite-outline');
-                    el.toggleClass('ion-android-favorite');
-                    el.toggleClass('active');
-                }
-            })
-        }
+
 
         function clickEvent(el) {
             el.on('click', function (e) {
@@ -95,9 +99,9 @@
 
                 var edit = el.hasClass('active') ? add : remove;
 
-                edit(item).then(function (u) {
-                    wbProfile.user(u);
-                })
+                edit(item).then(function (userInfo) {
+                    wbProfile.user(userInfo);
+                });
             });
         }
 

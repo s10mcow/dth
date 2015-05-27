@@ -1,0 +1,12 @@
+a {
+    &.favorite {
+        position: absolute;
+        top: 6%;
+        left: 0;
+        font-size: $font-size-xxlarge;
+        &.active {
+            color: red;
+            opacity: 1 !important;
+        }
+    }
+}

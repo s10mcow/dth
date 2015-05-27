@@ -8,12 +8,14 @@
         <h1>Favorites</h1>
 
         <ion-list>
+
             <ion-item ng-repeat="fav in profileCtrl.user.favorites">
-                <h2>{{fav}}</h2>
-                <ion-option-button class="button-positive"
-                                   ng-click="share(item)">
-                    Share
-                </ion-option-button>
+
+                <h2 ng-bind="fav.name"></h2>
+
+                <ion-option-button class="button-positive icon ion-android-share" ng-click="share(item)"></ion-option-button>
+
+                <wb-favorite wine="fav"></wb-favorite>
 
             </ion-item>
 

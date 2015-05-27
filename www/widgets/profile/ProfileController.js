@@ -12,13 +12,21 @@
         var vm = this;
 
         vm.user = {};
+        vm.getName = getName;
 
         $cordovaFacebook.api('me')
             .then(getMe)
             .then(amIinDB)
             .then(setUser)
+            .then(setFavs)
             .catch(error);
 
+
+        function getName(wine) {
+            $log.debug(wine);
+            //return wbWines.one(wine).get();
+
+        }
 
         function getMe(me) {
             vm.user.firstName = me.first_name;
@@ -26,7 +34,6 @@
             vm.user.email = me.email;
             vm.user.name = me.name;
             vm.user.id = me.id;
-            $ionicLoading.hide();
             return wbUsers.one(me.id).get();
         }
 
@@ -57,10 +64,16 @@
         }
 
         function setUser(user) {
-            vm.user.favorites = user[0].favorites;
+            var favorites = user[0].favorites;
             wbProfile.user(user[0]);
-            $log.debug(wbWines.one());
-            return wbWines.one().customGET(vm.user.favorites)
+            var getFavs = wbWines.one('fav');
+            getFavs.favs = favorites;
+            return getFavs.post();
+        }
+
+        function setFavs(favs) {
+            vm.user.favorites = favs;
+            $ionicLoading.hide();
         }
 
 

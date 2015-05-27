@@ -28,6 +28,7 @@
 			link: linker,
 			controller: 'SearchFormController',
 			controllerAs: 'searchCtrl',
+            bindToController: true,
 			templateUrl: PATH.widgets + 'search/search-form.tpl.html'
 		}
 

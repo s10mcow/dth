@@ -1609,14 +1609,6 @@ footer {
     white-space: normal; }
   .results .country {
     margin-bottom: -20px; }
-    .results .country a.favorite {
-      position: absolute;
-      top: 6%;
-      left: 93%;
-      font-size: 35px; }
-      .results .country a.favorite.active {
-        color: red;
-        opacity: 1; }
   .results .name {
     font-size: 31px;
     text-transform: uppercase;
@@ -1667,3 +1659,12 @@ footer {
 
 .profile h1 {
   color: white; }
+
+a.favorite {
+  position: absolute;
+  top: 6%;
+  left: 0;
+  font-size: 31px; }
+  a.favorite.active {
+    color: red;
+    opacity: 1 !important; }

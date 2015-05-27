@@ -63,13 +63,7 @@ angular
                 url: '',
                 views: {
                     'content@home': {
-                        template:'<wb-search-form></wb-search-form>',
-                        controller: 'SearchStateController',
-                        resolve: {
-                            resolveWines: function (wbWines) {
-                                return wbWines.one('names').getList();
-                            }
-                        }
+                        template:'<wb-search-form></wb-search-form>'
                     }
                 },
                 data: {
@@ -187,7 +181,7 @@ angular
 
             var appID = 684841048311727;
             var version = "v2.3"; // or leave blank and default is v2.0
-            facebookConnectPlugin.browserInit(appID, version);
+            //facebookConnectPlugin.browserInit(appID, version);
 
         });
 

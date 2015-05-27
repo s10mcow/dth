@@ -33,7 +33,7 @@ angular.module('widgets/nav-bar/nav-bar.tpl.html', []).run(['$templateCache', fu
 angular.module('widgets/profile/profile.tpl.html', []).run(['$templateCache', function($templateCache) {
   'use strict';
   $templateCache.put('widgets/profile/profile.tpl.html',
-    '<section class="search profile"><article><header class="header"><h3 class="h1">Hi <span ng-bind="profileCtrl.user.firstName"></span>.</h3></header><h1>Favorites</h1><ion-list><ion-item ng-repeat="fav in profileCtrl.user.favorites"><h2>{{fav}}</h2><ion-option-button class="button-positive" ng-click="share(item)">Share</ion-option-button></ion-item></ion-list></article></section>');
+    '<section class="search profile"><article><header class="header"><h3 class="h1">Hi <span ng-bind="profileCtrl.user.firstName"></span>.</h3></header><h1>Favorites</h1><ion-list><ion-item ng-repeat="fav in profileCtrl.user.favorites"><h2 ng-bind="fav.name"></h2><ion-option-button class="button-positive icon ion-android-share" ng-click="share(item)"></ion-option-button><wb-favorite wine="fav"></wb-favorite></ion-item></ion-list></article></section>');
 }]);
 
 angular.module('widgets/rating/rating.tpl.html', []).run(['$templateCache', function($templateCache) {
@@ -51,7 +51,7 @@ angular.module('widgets/results/show-wines.tpl.html', []).run(['$templateCache',
 angular.module('widgets/search/search-form.tpl.html', []).run(['$templateCache', function($templateCache) {
   'use strict';
   $templateCache.put('widgets/search/search-form.tpl.html',
-    '<section class="search"><article><header class="header"><h3 class="h1">Pick Yer Poison.</h3></header><form class="form" ng-submit="getSearchTerm()"><label for="search"></label><input id="search" awesomplete class="awesomplete" type="text" ng-model="searchCtrl.searchTerm" data-autofirst="true" list-of="searchCtrl.wineArr"> <button class="btn btn--round--comp6" type="submit"><i class="icon ion-search"></i></button></form></article></section><section><button class="btn btn--round__fixed btn--shadow" ng-click="$state.go(\'home.crud.add\')"><i class="icon ion-plus"></i></button></section>');
+    '<section class="search"><article><header class="header"><h3 class="h1">Pick Yer Poison.</h3></header><form class="form" ng-submit="getSearchTerm()"><label for="search"></label><input id="search" awesomplete class="awesomplete" type="text" ng-model="searchCtrl.searchTerm" data-autofirst="true" list-of="searchCtrl.names"> <button class="btn btn--round--comp6" type="submit"><i class="icon ion-search"></i></button></form></article></section><section><button class="btn btn--round__fixed btn--shadow" ng-click="$state.go(\'home.crud.add\')"><i class="icon ion-plus"></i></button></section>');
 }]);
 
 angular.module('views/main-content.tpl.html', []).run(['$templateCache', function($templateCache) {

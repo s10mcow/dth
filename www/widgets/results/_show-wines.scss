@@ -13,18 +13,7 @@
 
     .country {
         margin-bottom: -20px;
-        a {
-            &.favorite {
-                position: absolute;
-                top: 6%;
-                left: 93%;
-                font-size: $font-size-xxxlarge;
-                &.active {
-                    color: red;
-                    opacity: 1;
-                }
-            }
-        }
+
     }
 
 
