@@ -19,7 +19,9 @@
     "angular-bootstrap-rating": "*",
     "ng-cordova-oauth": "~0.1.1",
     "ngCordova": "~0.1.15-alpha",
-    "restangular": "~1.5.1"
+    "restangular": "~1.5.1",
+    "pouchdb": "~3.5.0",
+    "pouchdb-find": "~0.3.4"
   },
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0-rc.5"

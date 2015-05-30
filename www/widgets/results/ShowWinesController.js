@@ -15,10 +15,18 @@
 
 		var vm = this;
 
-        vm.wines = results;
+        if(results.rows) {
 
-        window.wines = results;
-
+            vm.wines = results.rows.filter(function (row) {
+                return row;
+            }).map(function (row) {
+                return row.doc;
+            }).filter(function (doc) {
+                return !!doc.name;
+            });
+        } else {
+            vm.wines = results.docs;
+        }
 
 
 	}

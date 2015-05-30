@@ -78,15 +78,27 @@ angular
                         controller: 'ShowWinesController as showWinesCtrl',
                         templateUrl: PATH.widgets + 'results/show-wines.tpl.html',
                         resolve: {
-                            results: function (wbWines, $stateParams, $ionicLoading) {
+                            results: function (wbWines, $stateParams, $ionicLoading,wbPouch) {
                                 $ionicLoading.show({
                                     template: 'Down the hatch!'
                                 });
 
                                 if($stateParams.searchTerm === 'all') {
-                                    return wbWines.getList();
+
+                                    var options = {
+                                        include_docs: true
+                                    };
+
+                                    return wbPouch.local.allDocs(options);
                                 } else {
-                                    return wbWines.one('names').all($stateParams.searchTerm).getList()
+
+                                    var find = {
+                                        selector: {
+                                            name: $stateParams.searchTerm
+                                        }
+                                    };
+
+                                    return wbPouch.local.find(find);
                                 }
                             }
                         }
@@ -172,16 +184,17 @@ angular
 
     })
 
-    .run(function ($rootScope, $state, $stateParams, $ionicPlatform) {
+    .run(function ($rootScope, $state, $stateParams, $ionicPlatform, wbPouch) {
         $ionicPlatform.ready(function () {
+
+            wbPouch.sync();
 
             if(window.StatusBar) {
                 StatusBar.styleDefault();
             }
-
             var appID = 684841048311727;
             var version = "v2.3"; // or leave blank and default is v2.0
-            //facebookConnectPlugin.browserInit(appID, version);
+            facebookConnectPlugin.browserInit(appID, version);
 
         });
 

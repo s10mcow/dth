@@ -38,7 +38,7 @@
 <ion-content xmlns="http://www.w3.org/1999/html">
     <section class="show-wines">
         <ion-list>
-            <ion-item class="card results" ng-repeat="wine in showWinesCtrl.wines">
+            <ion-item class="card results" ng-repeat="wine in showWinesCtrl.wines track by wine._id">
 
 
                 <div class="item">

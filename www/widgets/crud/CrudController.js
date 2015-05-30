@@ -5,9 +5,9 @@
 
     app.controller('CrudController', CrudController);
 
-    CrudController.$inject = ['wbWines', 'wbCamera', '$ionicLoading', '$state', '$log'];
+    CrudController.$inject = ['wbWines', 'wbCamera', '$ionicLoading', 'wbPouch', '$state', '$log'];
 
-    function CrudController(wbWines, wbCamera, $ionicLoading, $state, $log) {
+    function CrudController(wbWines, wbCamera, $ionicLoading, wbPouch, $state, $log) {
 
         var vm = this;
 
@@ -86,7 +86,11 @@
             }
 
 
-            wbWines.post(wine)
+            wine._id = new Date.toISOString();
+
+            wbPouch.put(wine)
+
+            //wbWines.post(wine)
                 .then(function (wines) {
                     vm.wine = {
                         rating: 3,

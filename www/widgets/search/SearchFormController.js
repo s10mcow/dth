@@ -6,9 +6,9 @@
 
     app.controller('SearchFormController', SearchFormController);
 
-	SearchFormController.$inject = ['$rootScope', '$log', '$state', 'wbWines', 'HELPERS'];
+	SearchFormController.$inject = ['$rootScope', '$log', '$state', 'wbPouch', 'HELPERS'];
 
-	function SearchFormController($rootScope, $log, $state, wbWines, HELPERS) {
+	function SearchFormController($rootScope, $log, $state, wbPouch, HELPERS) {
 
 
 		var vm = this;
@@ -17,7 +17,11 @@
 		vm.newWine = {};
 		vm.submitSearch = submitSearch;
 
-        wbWines.one('names').getList()
+        var options = {
+            include_docs: true
+        };
+
+        wbPouch.local.allDocs(options)
             .then(mapNamesAndBroadcast)
             .catch(error);
 
@@ -25,10 +29,17 @@
 
         //Private Methods
 
-        function mapNamesAndBroadcast(names) {
-            vm.names = names.map(function (wine) {
-                return wine.name;
+        function mapNamesAndBroadcast(results) {
+            vm.names = results.rows.filter(function (row) {
+                return row;
+            }).map(function (row) {
+                return row.doc;
+            }).filter(function (doc) {
+                return !!doc.name;
+            }).map(function (wine) {
+               return wine.name;
             });
+
             $rootScope.$broadcast(HELPERS.loadedNames, vm.names)
         }
 
