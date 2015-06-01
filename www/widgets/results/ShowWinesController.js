@@ -17,9 +17,7 @@
 
         if(results.rows) {
 
-            vm.wines = results.rows.filter(function (row) {
-                return row;
-            }).map(function (row) {
+            vm.wines = results.rows.map(function (row) {
                 return row.doc;
             }).filter(function (doc) {
                 return !!doc.name;

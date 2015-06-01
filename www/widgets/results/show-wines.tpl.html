@@ -1,44 +1,8 @@
-<!--<ion-content>-->
-    <!--<section class="show-wines">-->
-        <!--<ion-list>-->
-            <!--<ion-item class="results" ng-repeat="wine in showWinesCtrl.wines">-->
-
-                <!--<h5 class="country">Product of Portugal</h5>-->
-
-                <!--<rating ng-model="wine.rating" readonly="true"></rating>-->
-
-                <!--<h2 class="name" ng-bind="wine.name"></h2>-->
-
-                <!--<div class="label" ng-class="{'no-label icon ion-wineglass': !wine.base64Img}" style="background-image: url({{wine.base64Img}})"></div>-->
-
-                <!--<span class="origin" ng-bind="wine.origin"></span>-->
-
-                <!--<div class="year" ng-bind="wine.year"></div>-->
-
-                <!--<div class="taste" ng-bind="wine.taste"></div>-->
-
-
-                <!--<div class="comments" ng-bind="wine.comments"></div>-->
-
-
-                <!---->
-                <!--<span class="alcohol" ng-bind="wine.alcohol"></span>-->
-
-                <!--<span class="headache" ng-bind="wine.headache"></span> <span class="headache-icon"></span>-->
-
-
-            <!--</ion-item>-->
-        <!--</ion-list>-->
-
-    <!--</section>-->
-
-<!--</ion-content>-->
-
 
 <ion-content xmlns="http://www.w3.org/1999/html">
     <section class="show-wines">
         <ion-list>
-            <ion-item class="card results" ng-repeat="wine in showWinesCtrl.wines track by wine._id">
+            <ion-item class="card results" ng-repeat="wine in showWinesCtrl.wines track by $index">
 
 
                 <div class="item">

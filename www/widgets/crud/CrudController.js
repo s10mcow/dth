@@ -27,10 +27,40 @@
         vm.submitEditedWine = submitEditedWine;
         vm.removeWine = removeWine;
 
-        wbWines.one('names').getList()
-            .then(function (wines) {
-                vm.wines = wines;
+        //wbWines.one('names').getList()
+        //    .then(function (wines) {
+        //        vm.wines = wines;
+        //    });
+
+        var options = {
+            include_docs: true
+        };
+
+        $ionicLoading.show({
+            template: 'Loading Wines.'
+        });
+
+        wbPouch.local.allDocs(options)
+            .then(mapNamesAndBroadcast)
+            .catch(error);
+
+        function mapNamesAndBroadcast(results) {
+            vm.wines = results.rows.filter(function (row) {
+                return row;
+            }).map(function (row) {
+                return row.doc;
+            }).filter(function (doc) {
+                return !!doc.name;
+            }).map(function (wine) {
+                return {name: wine.name, id: wine._id};
             });
+
+            $ionicLoading.hide();
+        }
+
+        function error(err) {
+            $log.debug(err);
+        }
 
 
         function findById(id) {
@@ -44,16 +74,24 @@
             $ionicLoading.show({
                 template: 'Checking the stores!'
             });
-            wbWines.one(id).get()
+
+            var find = {
+                selector: {_id: id}
+            };
+
+            wbPouch.local.find(find)
                 .then(function (wine) {
-                    vm.wine = wine;
+                    vm.wine = wine.docs[0];
                     $ionicLoading.hide();
                 });
         }
 
         function submitEditedWine(wine) {
 
-            wine.put()
+            //wine._id = new Date().toISOString();
+
+            wbPouch.local.put(wine)
+//            wine.put()
                 .then(function () {
                     $state.go('home.results', {searchTerm: wine.name});
                 });
@@ -86,11 +124,9 @@
             }
 
 
-            wine._id = new Date.toISOString();
+            wine._id = new Date().toISOString();
 
-            wbPouch.put(wine)
-
-            //wbWines.post(wine)
+            wbPouch.local.put(wine)
                 .then(function (wines) {
                     vm.wine = {
                         rating: 3,
@@ -102,9 +138,9 @@
 
                     var options = {
                         method: 'feed',
-                        name: vm.newWine.name,
-                        message: 'I am drinking ' + vm.newWine.name,
-                        description: vm.newWine.origin + 'wine ' + vm.newWine.price + 'per bottle'
+                        name: vm.wine.name,
+                        message: 'I am drinking ' + vm.wine.name,
+                        description: vm.newWine.origin + 'wine ' + vm.wine.price + 'per bottle'
                     };
 
                     facebookConnectPlugin.showDialog(options,
@@ -115,7 +151,7 @@
 
                         }
                     );
-
+                    wbPouch.sync();
                     $state.go('home.results', {searchTerm: wine.name});
                 })
                 .catch(function (err) {
@@ -139,6 +175,7 @@
                 template: 'Throwing Overboard!'
             });
 
+            wbPouch.find()
             wbWines.one(wine.id).remove()
                 .then(function (wines) {
                     $ionicLoading.hide();

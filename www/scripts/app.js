@@ -194,7 +194,7 @@ angular
             }
             var appID = 684841048311727;
             var version = "v2.3"; // or leave blank and default is v2.0
-            facebookConnectPlugin.browserInit(appID, version);
+            //facebookConnectPlugin.browserInit(appID, version);
 
         });
 
